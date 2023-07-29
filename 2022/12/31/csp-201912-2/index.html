@@ -281,6 +281,22 @@
   
 
   
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://example.com/2022/12/31/csp-201912-2/",
+  owner: 'korolkk',
+  repo: 'https://korolkk.github.io/',
+  oauth: {
+    client_id: 'b9890d9fc779bf4de6ad',
+    client_secret: '03ccd4b4beb06b358a8d95134910f73e4c64538a',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
