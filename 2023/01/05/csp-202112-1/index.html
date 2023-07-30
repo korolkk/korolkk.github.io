@@ -16,7 +16,7 @@
 <meta property="og:description" content="题目【题目背景】 西西艾弗岛的购物中心里店铺林立，商品琳琅满目。为了帮助游客根据自己的预算快速选择心仪的商品，IT部门决定研发一套商品检索系统，支持对任意给定的预算x,查询在该预算范围内（≤x)价格最高的商品。如果没有商品符合该预算要求，便向游客推荐可以免费领取的西西艾弗岛定制纪念品。 假设购物中心里有n件商品，价格从低到高依次为A1,A2···An,则根据预算x检索商品的过程可以抽象为如下序列查">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-05T13:38:35.000Z">
-<meta property="article:modified_time" content="2023-07-29T04:11:42.701Z">
+<meta property="article:modified_time" content="2023-07-30T08:07:58.016Z">
 <meta property="article:author" content="KK">
 <meta name="twitter:card" content="summary">
   
@@ -174,9 +174,9 @@
       
         <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】 西西艾弗岛的购物中心里店铺林立，商品琳琅满目。为了帮助游客根据自己的预算快速选择心仪的商品，IT部门决定研发一套商品检索系统，支持对任意给定的预算x,查询在该预算范围内（≤x)价格最高的商品。如果没有商品符合该预算要求，便向游客推荐可以免费领取的西西艾弗岛定制纪念品。 假设购物中心里有n件商品，价格从低到高依次为A1,A2···An,则根据预算x检索商品的过程可以抽象为如下序列查询问题。</p>
 <p>【题目描述】 A&#x3D;[A0,A1,A2,···,An]是一个由n+1个[0，N)范围内整数组成的序列，满足0&#x3D;A0&lt;A1&lt;A2&lt;···&lt;An&lt;N。 (这个定义中蕴含了n一定小于N。) 基于序列A,对于[0，N)范围内任意的整数x,查询f(x)定义为：序列A中小于等于x的整数里最大的数的下标。 具体来说有以下两种情况： 1.存在下标0≤i&lt;n满足Ai≤x&lt;Ai+1 此时序列A中从A0到Ai均小于等于x,其中最大的数为Ai,其下标为i，故f(x)&#x3D;i。 2.An≤x 此时序列A中所有的数都小于等于x,其中最大的数为An,故f(x)&#x3D;n。 令sum(A)表示f(0)到f(N-1)的总和，即：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sum(A)=∑f(i)=f(0)+f(1)+f(2)+···+f(N-1)</span><br></pre></td></tr></table></figure>
-
-<p>对于给定的序列A,试计算sum(A)。 【输入格式】 从标准输入读入数据。 输入的第一行包含空格分隔的两个正整数n和N。 输入的第二行包含n个用空格分隔的整数A1,A2,···,An 注意 A0 固定为 0，因此输入数据中不包括A0。</p>
+<p>$$<br>sum(A)&#x3D;∑f(i)&#x3D;f(0)+f(1)+f(2)+···+f(N-1)<br>$$</p>
+<p>对于给定的序列A,试计算sum(A)。</p>
+<p>【输入格式】 从标准输入读入数据。 输入的第一行包含空格分隔的两个正整数n和N。 输入的第二行包含n个用空格分隔的整数A1,A2,···,An 注意 A0 固定为 0，因此输入数据中不包括A0。</p>
 <p>【输出格式】 输出到标准输出。 仅输出一个整数，表示 sum(A) 的值。</p>
 <p>【样例输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3 10</span><br><span class="line">2 5 8</span><br></pre></td></tr></table></figure>
@@ -198,17 +198,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -416,7 +406,51 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JWT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Golang</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目实战</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Gorm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">分布式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">前缀和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">深度图像</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">世界坐标</a>
               </li>
             
             <div class="clearfix"></div>

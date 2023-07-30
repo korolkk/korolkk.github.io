@@ -16,7 +16,7 @@
 <meta property="og:description" content="题目【题目背景】 上一题“序列查询”中说道： A&#x3D;[A0,A1,A2,,AN]是一个由n+1个[0，N)范围内整数组成的序列，满足0&#x3D;A0&lt;A1&lt;A2&lt;···&lt;An&lt;N。基于序列A,对于[O,N)范围内任意的整数x,查询f(x)定义为：序列A中小于等于x的整数里最大的数的下标。 对于给定的序列A和整数x,查询f(x)是一个很经典的问题，可以使用二分">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-05T13:51:28.000Z">
-<meta property="article:modified_time" content="2023-07-29T04:11:42.701Z">
+<meta property="article:modified_time" content="2023-07-30T08:09:54.294Z">
 <meta property="article:author" content="KK">
 <meta name="twitter:card" content="summary">
   
@@ -172,13 +172,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】 上一题“序列查询”中说道： A&#x3D;[A0,A1,A2,,AN]是一个由n+1个[0，N)范围内整数组成的序列，满足0&#x3D;A0&lt;A1&lt;A2&lt;···&lt;An&lt;N。基于序列A,对于[O,N)范围内任意的整数x,查询f(x)定义为：序列A中小于等于x的整数里最大的数的下标。 对于给定的序列A和整数x,查询f(x)是一个很经典的问题，可以使用二分搜索在O(logn)的时间复杂度内轻松解决。但在IT部门讨论如何实现这一功能时，小P同学提出了些新的想法。 【题目描述】 小P同学认为，如果事先知道了序列A中整数的分布情况，就能直接估计出其中小于等于x的最大整数的大致位置。 接着从这一估计位置开始线性查找，锁定(x)。如果估计得足够准确，线性查找的时间开销可能比二分查找算法更小。 比如说，如果A1,A2,···,An均匀分布在(0，N)的区间，那么就可以估算出：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(x)≈&#123;(n+1)·x&#125;/&#123;N&#125;</span><br></pre></td></tr></table></figure>
-
-<p>为了方便计算，小P首先定义了比例系数<code>r=N/&#123;n+1&#125;</code>，其中表示下取整，即r等于N除以n+1的商。进一步 地，小P用g(x)&#x3D;x&#x2F;r表示自己估算出的(x)的大小，这里同样使用了下取整来保证g(x)是一个整数。 显然，对于任意的询问x∈[O,N),g(x)和f(x)越接近则说明小P的估计越准确，后续进行线性查找的时间开销也越小。因此，小P用两者差的绝对值g(x)一f(x)来表示处理询问x时的误差。 为了整体评估小P同学提出的方法在序列A上的表现，试计算：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error(A)=g(0)-f(0)+···+g(N-1)-f(N-1)</span><br></pre></td></tr></table></figure>
-
-<p>【输入格式】 从标准输入读入数据。 输入的第一行包含空格分隔的两个正整数 n 和 N。 输入的第二行包含 n 个用空格分隔的整数A1,A2,···,An 注意 A0 固定为 0，因此输入数据中不包括A0。 【输出格式】 输出到标准输出。 仅输出一个整数，表示error(A)的值。</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】 上一题“序列查询”中说道： A&#x3D;[A0,A1,A2,,AN]是一个由n+1个[0，N)范围内整数组成的序列，满足0&#x3D;A0&lt;A1&lt;A2&lt;···&lt;An&lt;N。基于序列A,对于[O,N)范围内任意的整数x,查询f(x)定义为：序列A中小于等于x的整数里最大的数的下标。 对于给定的序列A和整数x,查询f(x)是一个很经典的问题，可以使用二分搜索在O(logn)的时间复杂度内轻松解决。但在IT部门讨论如何实现这一功能时，小P同学提出了些新的想法。</p>
+<p>【题目描述】 小P同学认为，如果事先知道了序列A中整数的分布情况，就能直接估计出其中小于等于x的最大整数的大致位置。 接着从这一估计位置开始线性查找，锁定(x)。如果估计得足够准确，线性查找的时间开销可能比二分查找算法更小。 比如说，如果A1,A2,···,An均匀分布在(0，N)的区间，那么就可以估算出：<br>$$<br>f(x)≈{(n+1)·x}&#x2F;{N}<br>$$</p>
+<p>为了方便计算，小P首先定义了比例系数$r&#x3D;N&#x2F;{n+1}$，其中表示下取整，即r等于N除以n+1的商。进一步 地，小P用g(x)&#x3D;x&#x2F;r表示自己估算出的(x)的大小，这里同样使用了下取整来保证g(x)是一个整数。 显然，对于任意的询问x∈[O,N),g(x)和f(x)越接近则说明小P的估计越准确，后续进行线性查找的时间开销也越小。因此，小P用两者差的绝对值g(x)一f(x)来表示处理询问x时的误差。 为了整体评估小P同学提出的方法在序列A上的表现，试计算：</p>
+<p>$$<br>error(A)&#x3D;g(0)-f(0)+···+g(N-1)-f(N-1)<br>$$</p>
+<p>【输入格式】 从标准输入读入数据。 输入的第一行包含空格分隔的两个正整数 n 和 N。 输入的第二行包含 n 个用空格分隔的整数A1,A2,···,An 注意 A0 固定为 0，因此输入数据中不包括A0。 </p>
+<p>【输出格式】 输出到标准输出。 仅输出一个整数，表示error(A)的值。</p>
 <p>【样例输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3 10</span><br><span class="line">2 5 8</span><br></pre></td></tr></table></figure>
 
@@ -199,17 +198,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -417,7 +406,51 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JWT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Golang</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目实战</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Gorm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">分布式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">前缀和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">深度图像</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">世界坐标</a>
               </li>
             
             <div class="clearfix"></div>

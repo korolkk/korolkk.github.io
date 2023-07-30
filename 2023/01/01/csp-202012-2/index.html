@@ -8,16 +8,17 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>CSP 202012-2期末预测之最佳阈值 C++ 100 | KK Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目【题目背景】 考虑到安全指数是一个较大范围内的整数、小菜很可能搞不清楚自己是否真的安全，顿顿决定设置一个阈值 ，以便将安全指数y转化为一个具体的预测结果——“会挂科”或“不会挂科”。 因为安全指数越高表明小菜同学挂科的可能性越低，所以当y≥\theta时，顿顿会预测小菜这学期很安全、不会挂科；反之若y&lt;\theta，顿顿就会劝诫小菜：“你期末要挂科了，勿谓言之不预也。” 那么这个阈值该如">
+  <meta name="description" content="题目【题目背景】 考虑到安全指数是一个较大范围内的整数、小菜很可能搞不清楚自己是否真的安全，顿顿决定设置一个阈值 ，以便将安全指数y转化为一个具体的预测结果——“会挂科”或“不会挂科”。 因为安全指数越高表明小菜同学挂科的可能性越低，所以当$y≥\theta$时，顿顿会预测小菜这学期很安全、不会挂科；反之若$y&lt;\theta$，顿顿就会劝诫小菜：“你期末要挂科了，勿谓言之不预也。” 那么这个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSP 202012-2期末预测之最佳阈值 C++ 100">
 <meta property="og:url" content="http://example.com/2023/01/01/csp-202012-2/index.html">
 <meta property="og:site_name" content="KK Blog">
-<meta property="og:description" content="题目【题目背景】 考虑到安全指数是一个较大范围内的整数、小菜很可能搞不清楚自己是否真的安全，顿顿决定设置一个阈值 ，以便将安全指数y转化为一个具体的预测结果——“会挂科”或“不会挂科”。 因为安全指数越高表明小菜同学挂科的可能性越低，所以当y≥\theta时，顿顿会预测小菜这学期很安全、不会挂科；反之若y&lt;\theta，顿顿就会劝诫小菜：“你期末要挂科了，勿谓言之不预也。” 那么这个阈值该如">
+<meta property="og:description" content="题目【题目背景】 考虑到安全指数是一个较大范围内的整数、小菜很可能搞不清楚自己是否真的安全，顿顿决定设置一个阈值 ，以便将安全指数y转化为一个具体的预测结果——“会挂科”或“不会挂科”。 因为安全指数越高表明小菜同学挂科的可能性越低，所以当$y≥\theta$时，顿顿会预测小菜这学期很安全、不会挂科；反之若$y&lt;\theta$，顿顿就会劝诫小菜：“你期末要挂科了，勿谓言之不预也。” 那么这个">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-01T08:58:16.000Z">
-<meta property="article:modified_time" content="2023-07-29T04:11:42.654Z">
+<meta property="article:modified_time" content="2023-07-30T06:07:41.786Z">
 <meta property="article:author" content="KK">
+<meta property="article:tag" content="前缀和">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="KK Blog" type="application/atom+xml">
@@ -172,15 +173,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】 考虑到安全指数是一个较大范围内的整数、小菜很可能搞不清楚自己是否真的安全，顿顿决定设置一个阈值 ，以便将安全指数y转化为一个具体的预测结果——“会挂科”或“不会挂科”。 因为安全指数越高表明小菜同学挂科的可能性越低，所以当<code>y≥\theta</code>时，顿顿会预测小菜这学期很安全、不会挂科；反之若<code>y&lt;\theta</code>，顿顿就会劝诫小菜：“你期末要挂科了，勿谓言之不预也。” 那么这个阈值该如何设定呢？顿顿准备从过往中寻找答案。</p>
-<p>【题目描述】 具体来说，顿顿评估了m位同学上学期的安全指数，其中第 <code>i(1\leq i\leq m)</code>位同学的安全指数为yi，是一个[0,10^8]范围内的整数；同时，该同学上学期的挂科情况记作<code>result_i\in 0,1</code>，其中0表示挂科、1表示未挂科。 相应地，顿顿用<code>predict_\theta(y)</code>表示根据阈值<code>\theta</code>将安全指数 y 转化为的具体预测结果。 如果<code>predict_\theta(y_j)</code>与 <code>result_j</code>相同，则说明阈值为<code>\theta</code>时顿顿对第 j 位同学是否挂科预测正确；不同则说明预测错误。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;predict&#125;_\theta\left(y\right)=\left\&#123;</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">0 \qquad (y&lt;θ)\\</span><br><span class="line">1 \qquad (y≥θ)</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\right.</span><br></pre></td></tr></table></figure>
-
-<p>最后，顿顿设计了如下公式来计算最佳阈值<code>\theta^*</code>:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\theta^*=&#123;\underset&#123;\theta\in y_i&#125;&#123;\arg\max&#125;\sum_&#123;j=1&#125;^&#123;m&#125;(predict_\theta(y_i)==result_j)&#125;</span><br></pre></td></tr></table></figure>
-
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】 考虑到安全指数是一个较大范围内的整数、小菜很可能搞不清楚自己是否真的安全，顿顿决定设置一个阈值 ，以便将安全指数y转化为一个具体的预测结果——“会挂科”或“不会挂科”。 因为安全指数越高表明小菜同学挂科的可能性越低，所以当$y≥\theta$时，顿顿会预测小菜这学期很安全、不会挂科；反之若$y&lt;\theta$，顿顿就会劝诫小菜：“你期末要挂科了，勿谓言之不预也。” 那么这个阈值该如何设定呢？顿顿准备从过往中寻找答案。</p>
+<p>【题目描述】 具体来说，顿顿评估了m位同学上学期的安全指数，其中第 $i(1\leq i\leq m)$位同学的安全指数为yi，是一个[0,10^8]范围内的整数；同时，该同学上学期的挂科情况记作$result_i\in 0,1$，其中0表示挂科、1表示未挂科。 相应地，顿顿用$predict_\theta(y)$表示根据阈值$\theta$将安全指数 y 转化为的具体预测结果。 如果$predict_\theta(y_j)$与 $result_j$相同，则说明阈值为$\theta$时顿顿对第 j 位同学是否挂科预测正确；不同则说明预测错误。</p>
+<p>$$<br>{predict}_\theta\left(y\right)&#x3D;\left{<br>\begin{aligned}<br>0 \qquad (y&lt;θ)\<br>1 \qquad (y≥θ)<br>\end{aligned}<br>\right.<br>$$</p>
+<p>最后，顿顿设计了如下公式来计算最佳阈值$\theta^*$:</p>
+<p>$$<br>\theta^*&#x3D;{\underset{\theta\in y_i}{\arg\max}\sum_{j&#x3D;1}^{m}(predict_\theta(y_i)&#x3D;&#x3D;result_j)}<br>$$</p>
 <p>该公式亦可等价地表述为如下规则： 1.最佳阈值仅在yi 中选取，即与某位同学的安全指数相同； 2.按照该阈值对这 m 位同学上学期的挂科情况进行预测，预测正确的次数最多（即准确率最高）； 3.多个阈值均可以达到最高准确率时，选取其中最大的。</p>
-<p>【输入格式】 从标准输入读入数据。 输入的第一行包含一个正整数 。 接下来输入m行，其中第<code>i(1\leq i\leq m)</code>行包括用空格分隔的两个整数 yi和resulti，含义如上文所述。</p>
+<p>【输入格式】 从标准输入读入数据。 输入的第一行包含一个正整数 。 接下来输入m行，其中第$i(1\leq i\leq m)$行包括用空格分隔的两个整数 yi和resulti，含义如上文所述。</p>
 <p>【输出格式】 输出到标准输出。 输出一个整数，表示最佳阈值。</p>
 <p>【样例1输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">6</span><br><span class="line">0 0</span><br><span class="line">1 0</span><br><span class="line">1 1</span><br><span class="line">3 1</span><br><span class="line">5 1</span><br><span class="line">7 1</span><br></pre></td></tr></table></figure>
@@ -188,7 +187,7 @@
 <p>【样例1输出】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
 
-<p>【样例1解释】 按照规则一，最佳阈值的选取范围为0,1,3,5,7。 阈值为0时，预测正确次数为 4； 阈值为1时，预测正确次数为 5； 阈值为3时，预测正确次数为 5； 阈值为5时，预测正确次数为 4； 阈值为7时，预测正确次数为 3。 阈值选取为 1 或 3 时，预测准确率最高； 所以按照规则二，最佳阈值的选取范围缩小为1,3。 依规则三，<code>\theta^*=max1,3=3</code>。</p>
+<p>【样例1解释】 按照规则一，最佳阈值的选取范围为0,1,3,5,7。 阈值为0时，预测正确次数为 4； 阈值为1时，预测正确次数为 5； 阈值为3时，预测正确次数为 5； 阈值为5时，预测正确次数为 4； 阈值为7时，预测正确次数为 3。 阈值选取为 1 或 3 时，预测准确率最高； 所以按照规则二，最佳阈值的选取范围缩小为1,3。 依规则三，$\theta^*&#x3D;max1,3&#x3D;3$。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//前缀和</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> &#123;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">    <span class="type">int</span> result;</span><br><span class="line">&#125;a[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(node A,node B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (A.y&lt;B.y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> m,t,j=<span class="number">0</span>,num=<span class="number">0</span>,cnt=<span class="number">0</span>,ans=<span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b[N]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    cin&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;a[i].y&gt;&gt;a[i].result;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(a,a+m,cmp);</span><br><span class="line">    b[<span class="number">0</span>]=a[<span class="number">0</span>].result;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        b[i]=b[i<span class="number">-1</span>]+a[i].result;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            t=<span class="number">0</span>;</span><br><span class="line">            j=<span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            j=i<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">while</span>(a[j].y==a[i].y)&#123;j--;&#125;</span><br><span class="line">            t=b[j];</span><br><span class="line">        &#125;</span><br><span class="line">        num=j+<span class="number">1</span>-t+b[m<span class="number">-1</span>]-t;</span><br><span class="line">        <span class="comment">//cout&lt;&lt;a[i].y&lt;&lt;&#x27; &#x27;&lt;&lt;num&lt;&lt;endl;</span></span><br><span class="line">        <span class="keyword">if</span>(num&gt;=cnt)</span><br><span class="line">        &#123;</span><br><span class="line">            cnt=num;</span><br><span class="line">            ans=a[i].y;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
@@ -197,23 +196,24 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">前缀和</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -421,7 +421,51 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JWT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Golang</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目实战</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Gorm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">分布式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">前缀和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">深度图像</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">世界坐标</a>
               </li>
             
             <div class="clearfix"></div>

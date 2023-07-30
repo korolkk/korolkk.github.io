@@ -15,14 +15,15 @@
 <meta property="og:site_name" content="KK Blog">
 <meta property="og:description" content="一、本堂课重点内容：本节课程主要分为四个方面：  语言进阶  依赖管理  单元测试  项目实战   二、详细知识点介绍：语言进阶Goroutine协程：用户态，轻量级线程，栈KB级别 线程：内核态，线程跑多个协程，栈MB级别  CSP(Communicating Sequential Processes)  提倡通过通信共享内存而不是通过共享内存而实现通信 Channelmake(chan 元素类">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.kkkode.top/wp-content/uploads/2023/01/uTools_1673940532987.png">
-<meta property="og:image" content="https://www.kkkode.top/wp-content/uploads/2023/01/uTools_1673940807668.png">
-<meta property="og:image" content="https://www.kkkode.top/wp-content/uploads/2023/01/uTools_1673956939847.png">
+<meta property="og:image" content="http://example.com/bytedance-camp-note-2/uTools_1673940532987-169070656623024.png">
+<meta property="og:image" content="http://example.com/bytedance-camp-note-2/uTools_1673940807668-169070659514827.png">
+<meta property="og:image" content="http://example.com/bytedance-camp-note-2/uTools_1673956939847.png">
 <meta property="article:published_time" content="2023-01-16T15:11:27.000Z">
-<meta property="article:modified_time" content="2023-07-29T04:11:42.889Z">
+<meta property="article:modified_time" content="2023-07-30T08:43:33.661Z">
 <meta property="article:author" content="KK">
+<meta property="article:tag" content="Golang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.kkkode.top/wp-content/uploads/2023/01/uTools_1673940532987.png">
+<meta name="twitter:image" content="http://example.com/bytedance-camp-note-2/uTools_1673940532987-169070656623024.png">
   
     <link rel="alternative" href="/atom.xml" title="KK Blog" type="application/atom+xml">
   
@@ -245,8 +246,8 @@
 <li>话题和回帖数据用文件存储</li>
 </ul>
 <h3 id="ER图"><a href="#ER图" class="headerlink" title="ER图"></a>ER图</h3><p>1个话题可以对应多个帖子，但一个帖子只能属于一个话题。</p>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/01/uTools_1673940532987.png" alt="uTools_1673940532987"></p>
-<h3 id="分层结构"><a href="#分层结构" class="headerlink" title="分层结构"></a>分层结构</h3><p><img src="https://www.kkkode.top/wp-content/uploads/2023/01/uTools_1673940807668.png" alt="uTools_1673940807668"></p>
+<p><img src="/bytedance-camp-note-2/uTools_1673940532987-169070656623024.png" alt="uTools_1673940532987"></p>
+<h3 id="分层结构"><a href="#分层结构" class="headerlink" title="分层结构"></a>分层结构</h3><p><img src="/bytedance-camp-note-2/uTools_1673940807668-169070659514827.png" alt="uTools_1673940807668"></p>
 <p>数据层：数据Model，外部数据的增删改查</p>
 <p>逻辑层：业务Entity，处理核心业务逻辑输出</p>
 <p>视图层：视图View，处理和外部的交互逻辑</p>
@@ -254,7 +255,7 @@
 <p><a target="_blank" rel="noopener" href="https://github.com/gin-gonic/gin#installation">https://github.com/gin-gonic/gin#installation</a></p>
 <p>Go mod</p>
 <p>go mod init</p>
-<p>go get gopkg.in&#x2F;gin-gonic&#x2F;<a href="mailto:&#x67;&#x69;&#110;&#x2e;&#118;&#x31;&#x40;&#118;&#x31;&#46;&#x33;&#46;&#48;">&#x67;&#x69;&#110;&#x2e;&#118;&#x31;&#x40;&#118;&#x31;&#46;&#x33;&#46;&#48;</a></p>
+<p>go get gopkg.in&#x2F;gin-gonic&#x2F;<a href="mailto:&#x67;&#105;&#110;&#x2e;&#x76;&#49;&#64;&#x76;&#49;&#x2e;&#x33;&#46;&#x30;">&#x67;&#105;&#110;&#x2e;&#x76;&#49;&#64;&#x76;&#49;&#x2e;&#x33;&#46;&#x30;</a></p>
 <h3 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Topic</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span><span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span><span class="string">&quot;青训营来啦！&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span><span class="string">&quot;欢迎踊跃报名！&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;create_time&quot;</span><span class="punctuation">:</span><span class="number">100213123123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Post</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span><span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;parent_id&quot;</span><span class="punctuation">:</span><span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span><span class="string">&quot;欢迎欢迎！&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;create_time&quot;</span><span class="punctuation">:</span><span class="number">2131312</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
 <p>以下代码中用到了sync.once，主要适用高并发的场景下只执行一次的场景，这里的基于once的实现模式就是我们平常说的单例模式，减少存储的浪费。</p>
@@ -273,7 +274,7 @@
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> PageData <span class="keyword">struct</span> &#123;</span><br><span class="line">    Code <span class="type">int64</span>       <span class="string">`json:&quot;code&quot;`</span></span><br><span class="line">    Msg  <span class="type">string</span>      <span class="string">`json:&quot;msg&quot;`</span></span><br><span class="line">    Data <span class="keyword">interface</span>&#123;&#125; <span class="string">`json:&quot;data&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="运行测试"><a href="#运行测试" class="headerlink" title="运行测试"></a>运行测试</h3><p>成功得到返回结果（中文乱码，问题不大。。</p>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/01/uTools_1673956939847.png" alt="uTools_1673956939847"></p>
+<p><img src="/bytedance-camp-note-2/uTools_1673956939847.png" alt="uTools_1673956939847"></p>
 <h2 id="四、课后个人总结："><a href="#四、课后个人总结：" class="headerlink" title="四、课后个人总结："></a>四、课后个人总结：</h2><p>本次课程知识点较多，需要慢慢消化吸收。</p>
 <p>仅仅是跟着老师实现一遍，还是遇到很多的问题，但是开发流程有了一定了解。</p>
 <p>还有课后实践没有完成：</p>
@@ -290,23 +291,24 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Golang</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
+        			<a href="/categories/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
 
         		</li>
       		
@@ -514,7 +516,51 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JWT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Golang</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目实战</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Gorm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">分布式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">前缀和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">深度图像</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">世界坐标</a>
               </li>
             
             <div class="clearfix"></div>

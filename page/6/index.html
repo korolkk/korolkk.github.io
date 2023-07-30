@@ -172,9 +172,9 @@
       
         <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】 西西艾弗岛的购物中心里店铺林立，商品琳琅满目。为了帮助游客根据自己的预算快速选择心仪的商品，IT部门决定研发一套商品检索系统，支持对任意给定的预算x,查询在该预算范围内（≤x)价格最高的商品。如果没有商品符合该预算要求，便向游客推荐可以免费领取的西西艾弗岛定制纪念品。 假设购物中心里有n件商品，价格从低到高依次为A1,A2···An,则根据预算x检索商品的过程可以抽象为如下序列查询问题。</p>
 <p>【题目描述】 A&#x3D;[A0,A1,A2,···,An]是一个由n+1个[0，N)范围内整数组成的序列，满足0&#x3D;A0&lt;A1&lt;A2&lt;···&lt;An&lt;N。 (这个定义中蕴含了n一定小于N。) 基于序列A,对于[0，N)范围内任意的整数x,查询f(x)定义为：序列A中小于等于x的整数里最大的数的下标。 具体来说有以下两种情况： 1.存在下标0≤i&lt;n满足Ai≤x&lt;Ai+1 此时序列A中从A0到Ai均小于等于x,其中最大的数为Ai,其下标为i，故f(x)&#x3D;i。 2.An≤x 此时序列A中所有的数都小于等于x,其中最大的数为An,故f(x)&#x3D;n。 令sum(A)表示f(0)到f(N-1)的总和，即：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sum(A)=∑f(i)=f(0)+f(1)+f(2)+···+f(N-1)</span><br></pre></td></tr></table></figure>
-
-<p>对于给定的序列A,试计算sum(A)。 【输入格式】 从标准输入读入数据。 输入的第一行包含空格分隔的两个正整数n和N。 输入的第二行包含n个用空格分隔的整数A1,A2,···,An 注意 A0 固定为 0，因此输入数据中不包括A0。</p>
+<p>$$<br>sum(A)&#x3D;∑f(i)&#x3D;f(0)+f(1)+f(2)+···+f(N-1)<br>$$</p>
+<p>对于给定的序列A,试计算sum(A)。</p>
+<p>【输入格式】 从标准输入读入数据。 输入的第一行包含空格分隔的两个正整数n和N。 输入的第二行包含n个用空格分隔的整数A1,A2,···,An 注意 A0 固定为 0，因此输入数据中不包括A0。</p>
 <p>【输出格式】 输出到标准输出。 仅输出一个整数，表示 sum(A) 的值。</p>
 <p>【样例输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3 10</span><br><span class="line">2 5 8</span><br></pre></td></tr></table></figure>
@@ -196,17 +196,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -266,13 +256,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 A1,A2,···,An是一个由n个自然数（即非负整数）组成的数组。在此基础上，我们用数组B1···Bn表示A的前缀最大值。 <code>B_i=max&#123;\&#123;A_1,A_2,···,A_i\&#125;&#125;</code> 如上所示，<code>B_i</code>定义为数组A中前i个数的最大值。 根据该定义易知<code>A_1=B_1</code>,且随着i的增大，<code>B_i</code>单调不降。 此外，我们用<code>sum=A_1十A_2十···十A_n</code>表示数组A中n个数的总和。 现己知数组B,我们想要根据B的值来反推数组A。 显然，对于给定的B,A的取值可能并不唯一。 试计算，在数组A所有可能的取值情况中，sum的最大值和最小值分别是多少？ 【输入格式】 从标准输入读入数据。 输入的第一行包含一个正整数 n. 输入的第二行包含 n 个用空格分隔的自然数B1,B2,···,Bn 【输出格式】 输出到标准输出。 输出共两行。 第一行输出一个整数，表示sum的最大值。 第二行输出一个整数，表示sum的最小值。 【样例输入】</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】</p>
+<p>【输入格式】<br>从标准输入读入数据。<br>输入的第一行包含一个正整数 n.<br>输入的第二行包含 n 个用空格分隔的自然数B1,B2,···,Bn<br>【输出格式】<br>输出到标准输出。<br>输出共两行。<br>第一行输出一个整数，表示sum的最大值。<br>第二行输出一个整数，表示sum的最小值。<br>【样例输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">6</span><br><span class="line">0 0 5 5 10 10</span><br></pre></td></tr></table></figure>
 
 <p>【样例输出】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">30</span><br><span class="line">15</span><br></pre></td></tr></table></figure>
 
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> sum_max,sum_min;</span><br><span class="line">    <span class="type">int</span> n,pre,cur;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    pre=<span class="number">-1</span>;</span><br><span class="line">    sum_max=<span class="number">0</span>;</span><br><span class="line">    sum_min=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;cur;</span><br><span class="line">        <span class="keyword">if</span>(cur!=pre)</span><br><span class="line">        &#123;</span><br><span class="line">            sum_min+=cur;</span><br><span class="line">        &#125;</span><br><span class="line">        sum_max+=cur;</span><br><span class="line">        pre=cur;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;sum_max&lt;&lt;endl&lt;&lt;sum_min&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -286,17 +277,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -356,7 +337,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 A1,A2,···,An是一个由n个自然数（非负整数）组成的数组。我们称其中Ai,···,Aj是一个非零段，当且仅当以下条件 同时满足： ·1≤i≤j≤n; ·对于任意的整数k,若i≤k≤j,则<code>A_k</code>&gt;0; ·i&#x3D;1或<code>A_&#123;i-1&#125;</code>=0; ·j&#x3D;n或<code>A_&#123;j+1&#125;</code>=0。 下面展示了几个简单的例子： ·A&#x3D;[3,1,2,0,0,2,0,4,5,0,2]中的4个非零段依次为[3,1,2]、[2]、[4,5]和[2]; ·A&#x3D;[2,3,1,4,5]仅有1个非零段： ·A&#x3D;[0,0,0]则不含非零段（即非零段个数为0）。 现在我们可以对数组A进行如下操作：任选一个正整数p,然后将A中所有小于p的数都变为0。试选取一个合适的P, 使得数组 A 中的非零段个数达到最大。若输入的 A 所含非零段数己达最大值，可取p&#x3D;1,即不对 A 做任何修改。</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 A1,A2,···,An是一个由n个自然数（非负整数）组成的数组。我们称其中Ai,···,Aj是一个非零段，当且仅当以下条件 同时满足： ·1≤i≤j≤n; ·对于任意的整数k,若i≤k≤j,则$A_k$&gt;0; ·i&#x3D;1或$A_{i-1}$=0; ·j&#x3D;n或$A_{j+1}$=0。 下面展示了几个简单的例子： ·A&#x3D;[3,1,2,0,0,2,0,4,5,0,2]中的4个非零段依次为[3,1,2]、[2]、[4,5]和[2]; ·A&#x3D;[2,3,1,4,5]仅有1个非零段： ·A&#x3D;[0,0,0]则不含非零段（即非零段个数为0）。 现在我们可以对数组A进行如下操作：任选一个正整数p,然后将A中所有小于p的数都变为0。试选取一个合适的P, 使得数组 A 中的非零段个数达到最大。若输入的 A 所含非零段数己达最大值，可取p&#x3D;1,即不对 A 做任何修改。</p>
 <p>【输入格式】 从标准输入读入数据。 输入的第一行包含一个正整数 n。 输入的第二行包含 n 个用空格分隔的自然数A1,A2,···,An。</p>
 <p>【输出格式】 输出到标准输出。 仅输出一个整数，表示对数组 A 进行操作后，其非零段个数能达到的最大值。</p>
 <p>【样例输入】</p>
@@ -379,17 +360,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -450,13 +421,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【试题背景】 顿顿在学习了数字图像处理后，想要对手上的一副灰度图像进行降噪处理。不过该图像仅在较暗区域有很多噪点，如果贸然对全图进行降噪，会在抹去噪点的同时也模糊了原有图像。因此顿顿打算先使用<strong>邻域均值</strong>来判断一个像素是否处于<strong>较暗区域</strong>，然后仅对处于<strong>较暗区域</strong>的像素进行降噪处理。</p>
-<p>【问题描述】 待处理的灰度图像长宽皆为 n 个像素，可以表示为一个 n×n大小的矩阵 A，其中每个元素是一个[0,L)范围内的整数，表示对应位置像素的灰度值。 对于矩阵中任意一个元素<code>A_&#123;ij&#125;</code>(0≤i,j&lt;n) ，其邻域定义为附近若干元素的集和： <code>111</code></p>
-<p>这里使用了一个额外的参数 r 来指明<code>A_&#123;ij&#125;</code>附近元素的具体范围。根据定义，易知<code>neighbor(i,j,r)</code>最多有<code>(2r+1)^2</code>个元素。</p>
-<p>如果元素<code>A_&#123;ij&#125;</code><strong>邻域</strong>中所有元素的<strong>平均值</strong>小于或等于一个给定的阈值 t，我们就认为该元素对应位置的像素处于较暗区域。 下图给出了两个例子，左侧图像的较暗区域在右侧图像中展示为黑色，其余区域展示为白色。 <img src="https://www.kkkode.top/wp-content/uploads/2023/01/RequireFile-300x197.jpg"></p>
+<p>【问题描述】 待处理的灰度图像长宽皆为 n 个像素，可以表示为一个 n×n大小的矩阵 A，其中每个元素是一个[0,L)范围内的整数，表示对应位置像素的灰度值。 对于矩阵中任意一个元素$A_{ij}$(0≤i,j&lt;n) ，其邻域定义为附近若干元素的集和： $111$</p>
+<p>这里使用了一个额外的参数 r 来指明$A_{ij}$附近元素的具体范围。根据定义，易知$neighbor(i,j,r)$最多有$(2r+1)^2$个元素。</p>
+<p>如果元素$A_{ij}$<strong>邻域</strong>中所有元素的<strong>平均值</strong>小于或等于一个给定的阈值 t，我们就认为该元素对应位置的像素处于较暗区域。 下图给出了两个例子，左侧图像的较暗区域在右侧图像中展示为黑色，其余区域展示为白色。 <img src="/csp-202104-2/RequireFile-300x197.jpg"></p>
 <p>现给定邻域参数 r 和阈值 t，试统计输入灰度图像中有多少像素处于<strong>较暗区域</strong>。</p>
 <p>【输入格式】 输入共 n+1 行。</p>
 <p>输入的第一行包含四个用空格分隔的正整数 n、L、r 和 t，含义如前文所述。</p>
-<p>第二到第 n+1 行输入矩阵 A。 第<code>i+2</code>(0≤i&lt;n)行包含用空格分隔的 n 个整数，依次为<code>A_&#123;i0&#125;,A_&#123;i1&#125;,···,A_&#123;i(n-1)&#125;</code>。</p>
+<p>第二到第 n+1 行输入矩阵 A。 第<code>i+2</code>(0≤i&lt;n)行包含用空格分隔的 n 个整数，依次为$A_{i0},A_{i1},···,A_{i(n-1)}$。</p>
 <p>【输出格式】 输出一个整数，表示输入灰度图像中处于较暗区域的像素总数。</p>
 <p>【样例输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 16 1 6</span><br><span class="line">0 1 2 3</span><br><span class="line">4 5 6 7</span><br><span class="line">8 9 10 11</span><br><span class="line">12 13 14 15</span><br></pre></td></tr></table></figure>
@@ -478,23 +449,24 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">前缀和</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -554,8 +526,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 一幅长宽分别为n个像素和m个像素的灰度图像可以表示为一个n×m大小的矩阵A。 其中每个元素<code>A_&#123;ij&#125;</code> (0≤i&lt;n、0≤j&lt;m) 是一个[0，L)范围内的整数，表示对应位置像素的灰度值。 具体来说，一个8比特的灰度图像中每个像素的灰度范围是[0,128)。 一副灰度图像的灰度统计直方图（以下简称“直方图”）可以表示为一个长度为L的数组h,其中<code>h[x]</code>(0≤x&lt;L)表示该图像中灰度值为x的像素个数。显然，h[0]到h[L-1]的总和应等于图像中的像素总数n·m。 已知一副图像的灰度矩阵A,试计算其灰度直方图h[0],h[1],···,h[L-1]。</p>
-<p>【输入格式】 输入共n+1行。 输入的第一行包含三个用空格分隔的正整数n、m和L,含义如前文所述。 第二到第n+1行输入矩阵A。 第i+2(0≤i&lt;n)行包含用空格分隔的m个整数，依次为<code>A_&#123;i0&#125;,A_&#123;i1&#125;,···,A_&#123;i(m-1)&#125;</code></p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 一幅长宽分别为n个像素和m个像素的灰度图像可以表示为一个n×m大小的矩阵A。 其中每个元素$A_{ij}$(0≤i&lt;n、0≤j&lt;m) 是一个[0，L)范围内的整数，表示对应位置像素的灰度值。 具体来说，一个8比特的灰度图像中每个像素的灰度范围是[0,128)。 一副灰度图像的灰度统计直方图（以下简称“直方图”）可以表示为一个长度为L的数组h,其中$h[x]$(0≤x&lt;L)表示该图像中灰度值为x的像素个数。显然，h[0]到h[L-1]的总和应等于图像中的像素总数n·m。 已知一副图像的灰度矩阵A,试计算其灰度直方图h[0],h[1],···,h[L-1]。</p>
+<p>【输入格式】 输入共n+1行。 输入的第一行包含三个用空格分隔的正整数n、m和L,含义如前文所述。 第二到第n+1行输入矩阵A。 第i+2(0≤i&lt;n)行包含用空格分隔的m个整数，依次为$A_{i0},A_{i1},···,A_{i(m-1)}$</p>
 <p>【输出格式】 输出仅一行，包含用空格分隔的L个整数h[0],h[1],···,h[L-1],表示输入图像的灰度直方图。</p>
 <p>【样例输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 4 16</span><br><span class="line">0 1 2 3</span><br><span class="line">4 5 6 7</span><br><span class="line">8 9 10 11</span><br><span class="line">12 13 14 15</span><br></pre></td></tr></table></figure>
@@ -577,17 +549,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -647,15 +609,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】 考虑到安全指数是一个较大范围内的整数、小菜很可能搞不清楚自己是否真的安全，顿顿决定设置一个阈值 ，以便将安全指数y转化为一个具体的预测结果——“会挂科”或“不会挂科”。 因为安全指数越高表明小菜同学挂科的可能性越低，所以当<code>y≥\theta</code>时，顿顿会预测小菜这学期很安全、不会挂科；反之若<code>y&lt;\theta</code>，顿顿就会劝诫小菜：“你期末要挂科了，勿谓言之不预也。” 那么这个阈值该如何设定呢？顿顿准备从过往中寻找答案。</p>
-<p>【题目描述】 具体来说，顿顿评估了m位同学上学期的安全指数，其中第 <code>i(1\leq i\leq m)</code>位同学的安全指数为yi，是一个[0,10^8]范围内的整数；同时，该同学上学期的挂科情况记作<code>result_i\in 0,1</code>，其中0表示挂科、1表示未挂科。 相应地，顿顿用<code>predict_\theta(y)</code>表示根据阈值<code>\theta</code>将安全指数 y 转化为的具体预测结果。 如果<code>predict_\theta(y_j)</code>与 <code>result_j</code>相同，则说明阈值为<code>\theta</code>时顿顿对第 j 位同学是否挂科预测正确；不同则说明预测错误。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;predict&#125;_\theta\left(y\right)=\left\&#123;</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">0 \qquad (y&lt;θ)\\</span><br><span class="line">1 \qquad (y≥θ)</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\right.</span><br></pre></td></tr></table></figure>
-
-<p>最后，顿顿设计了如下公式来计算最佳阈值<code>\theta^*</code>:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\theta^*=&#123;\underset&#123;\theta\in y_i&#125;&#123;\arg\max&#125;\sum_&#123;j=1&#125;^&#123;m&#125;(predict_\theta(y_i)==result_j)&#125;</span><br></pre></td></tr></table></figure>
-
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】 考虑到安全指数是一个较大范围内的整数、小菜很可能搞不清楚自己是否真的安全，顿顿决定设置一个阈值 ，以便将安全指数y转化为一个具体的预测结果——“会挂科”或“不会挂科”。 因为安全指数越高表明小菜同学挂科的可能性越低，所以当$y≥\theta$时，顿顿会预测小菜这学期很安全、不会挂科；反之若$y&lt;\theta$，顿顿就会劝诫小菜：“你期末要挂科了，勿谓言之不预也。” 那么这个阈值该如何设定呢？顿顿准备从过往中寻找答案。</p>
+<p>【题目描述】 具体来说，顿顿评估了m位同学上学期的安全指数，其中第 $i(1\leq i\leq m)$位同学的安全指数为yi，是一个[0,10^8]范围内的整数；同时，该同学上学期的挂科情况记作$result_i\in 0,1$，其中0表示挂科、1表示未挂科。 相应地，顿顿用$predict_\theta(y)$表示根据阈值$\theta$将安全指数 y 转化为的具体预测结果。 如果$predict_\theta(y_j)$与 $result_j$相同，则说明阈值为$\theta$时顿顿对第 j 位同学是否挂科预测正确；不同则说明预测错误。</p>
+<p>$$<br>{predict}_\theta\left(y\right)&#x3D;\left{<br>\begin{aligned}<br>0 \qquad (y&lt;θ)\<br>1 \qquad (y≥θ)<br>\end{aligned}<br>\right.<br>$$</p>
+<p>最后，顿顿设计了如下公式来计算最佳阈值$\theta^*$:</p>
+<p>$$<br>\theta^*&#x3D;{\underset{\theta\in y_i}{\arg\max}\sum_{j&#x3D;1}^{m}(predict_\theta(y_i)&#x3D;&#x3D;result_j)}<br>$$</p>
 <p>该公式亦可等价地表述为如下规则： 1.最佳阈值仅在yi 中选取，即与某位同学的安全指数相同； 2.按照该阈值对这 m 位同学上学期的挂科情况进行预测，预测正确的次数最多（即准确率最高）； 3.多个阈值均可以达到最高准确率时，选取其中最大的。</p>
-<p>【输入格式】 从标准输入读入数据。 输入的第一行包含一个正整数 。 接下来输入m行，其中第<code>i(1\leq i\leq m)</code>行包括用空格分隔的两个整数 yi和resulti，含义如上文所述。</p>
+<p>【输入格式】 从标准输入读入数据。 输入的第一行包含一个正整数 。 接下来输入m行，其中第$i(1\leq i\leq m)$行包括用空格分隔的两个整数 yi和resulti，含义如上文所述。</p>
 <p>【输出格式】 输出到标准输出。 输出一个整数，表示最佳阈值。</p>
 <p>【样例1输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">6</span><br><span class="line">0 0</span><br><span class="line">1 0</span><br><span class="line">1 1</span><br><span class="line">3 1</span><br><span class="line">5 1</span><br><span class="line">7 1</span><br></pre></td></tr></table></figure>
@@ -663,7 +623,7 @@
 <p>【样例1输出】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
 
-<p>【样例1解释】 按照规则一，最佳阈值的选取范围为0,1,3,5,7。 阈值为0时，预测正确次数为 4； 阈值为1时，预测正确次数为 5； 阈值为3时，预测正确次数为 5； 阈值为5时，预测正确次数为 4； 阈值为7时，预测正确次数为 3。 阈值选取为 1 或 3 时，预测准确率最高； 所以按照规则二，最佳阈值的选取范围缩小为1,3。 依规则三，<code>\theta^*=max1,3=3</code>。</p>
+<p>【样例1解释】 按照规则一，最佳阈值的选取范围为0,1,3,5,7。 阈值为0时，预测正确次数为 4； 阈值为1时，预测正确次数为 5； 阈值为3时，预测正确次数为 5； 阈值为5时，预测正确次数为 4； 阈值为7时，预测正确次数为 3。 阈值选取为 1 或 3 时，预测准确率最高； 所以按照规则二，最佳阈值的选取范围缩小为1,3。 依规则三，$\theta^*&#x3D;max1,3&#x3D;3$。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//前缀和</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> &#123;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">    <span class="type">int</span> result;</span><br><span class="line">&#125;a[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(node A,node B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (A.y&lt;B.y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> m,t,j=<span class="number">0</span>,num=<span class="number">0</span>,cnt=<span class="number">0</span>,ans=<span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b[N]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    cin&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;a[i].y&gt;&gt;a[i].result;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(a,a+m,cmp);</span><br><span class="line">    b[<span class="number">0</span>]=a[<span class="number">0</span>].result;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        b[i]=b[i<span class="number">-1</span>]+a[i].result;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            t=<span class="number">0</span>;</span><br><span class="line">            j=<span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            j=i<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">while</span>(a[j].y==a[i].y)&#123;j--;&#125;</span><br><span class="line">            t=b[j];</span><br><span class="line">        &#125;</span><br><span class="line">        num=j+<span class="number">1</span>-t+b[m<span class="number">-1</span>]-t;</span><br><span class="line">        <span class="comment">//cout&lt;&lt;a[i].y&lt;&lt;&#x27; &#x27;&lt;&lt;num&lt;&lt;endl;</span></span><br><span class="line">        <span class="keyword">if</span>(num&gt;=cnt)</span><br><span class="line">        &#123;</span><br><span class="line">            cnt=num;</span><br><span class="line">            ans=a[i].y;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
@@ -672,23 +632,24 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">前缀和</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -773,17 +734,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -873,17 +824,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -943,7 +884,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】 2020年6月8日，国务院联防联控机制发布《关于加快推进新冠病毒核酸检测的实施意见》，提出对“密切接触者”等八类重点人群“应检尽检”，其他人群“愿检尽检”。 【问题描述】 某市设有n个核酸检测点，编号从1到n,其中i号检测点的位置可以表示为一个平面整数坐标(xi,yi) 为方便预约核酸检测，请根据市民所在位置(X,Y),查询距其最近的三个检测点。 多个检测点距离相同时，编号较小的视为更近。 【输入格式】 输入共n+1行。 第一行包含用空格分隔的三个整数n、X和Y,表示检测点总数和市民所在位置。 第二行到第n+1行依次输入n个检测点的坐标。第i+1行(1≤i≤n)包含用空格分隔的两个整数：xi和yi,表示 i号检测点所在位置。 【输出格式】 输出共三行，按距离从近到远，依次输出距离该市民最近的三个检测点编号。 【样例输入1】</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】 2020年6月8日，国务院联防联控机制发布《关于加快推进新冠病毒核酸检测的实施意见》，提出对“密切接触者”等八类重点人群“应检尽检”，其他人群“愿检尽检”。 </p>
+<p>【问题描述】 某市设有n个核酸检测点，编号从1到n,其中i号检测点的位置可以表示为一个平面整数坐标(xi,yi) 为方便预约核酸检测，请根据市民所在位置(X,Y),查询距其最近的三个检测点。 多个检测点距离相同时，编号较小的视为更近。 </p>
+<p>【输入格式】 输入共n+1行。 第一行包含用空格分隔的三个整数n、X和Y,表示检测点总数和市民所在位置。 第二行到第n+1行依次输入n个检测点的坐标。第i+1行(1≤i≤n)包含用空格分隔的两个整数：xi和yi,表示 i号检测点所在位置。 </p>
+<p>【输出格式】 输出共三行，按距离从近到远，依次输出距离该市民最近的三个检测点编号。 </p>
+<p>【样例输入1】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 2 2</span><br><span class="line">2 2</span><br><span class="line">2 3</span><br><span class="line">2 4</span><br></pre></td></tr></table></figure>
 
 <p>【样例输出1】</p>
@@ -963,17 +908,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -1033,7 +968,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 对于一个n维整数向量v∈Z”，其在第index个维度上的取值记作Vindex。这里我们约定index的取值从1开始，即v&#x3D;(v1,v2…,vn)。下面介绍一种向量的稀疏表示方法。 如果v仅在少量维度上的取值不为0，则称其为稀疏向量。 例如当&#x3D;10时，v&#x3D;(0,0,0,5,0,0,-3,0,0,1)就是一个稀疏向量。 由于稀疏向量的非零值较少，我们可以通过仅存储非零值的方式来节省空间。具体来说，每个非零值都可以用一个(index,value)对来表示，即该向量在第index个维度上的取值Vindex&#x3D;value。在上面的例子中，v就可以表示为[(4,5)，(7，-3)，(10,1)]。 接下来给出这种稀疏表示一般化的定义。 ·对于任意一个n维整数向量v∈Z”，如果其在且仅在a个维度上取值不为0，则 可以唯一表示为：[(index1,valve1),(index2,valve2),···(indexa,valuea)] ·其中所有的index均为整数且满足： 1≤index1&lt;indew2&lt;···&lt;indexa≤n ·valuei:表示问量v在对应维度indexi上的非零值。 给出两个n维整数问量u,v∈Z”的稀疏表示，试计算它们的内积。 【输入格式】 从标准输入读入数据。 输入的第一行包含用空格分隔的三个正整数n、a和b，其中n表示向量u、v的 维数，a和b分别表示两个向量所含非零值的个数。 第二行到第a+1行输入向量的稀疏表示。第i+1行(1≤i≤a)包含用空格 分隔的两个整数indexi和valuei,表示Vindexj&#x3D;valuej 第a+2行到第a+b+1行输入向量v的稀疏表示。第j+a+1行(1≤j≤b) 包含用空格分隔的两个整数indexj;和valuej,表示Vindexj&#x3D;valuej 【输出格式】 输出到标准输出。 输出一个整数，表示向量u和v的内积u·v。 【样例输入】</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 对于一个n维整数向量v∈Z”，其在第index个维度上的取值记作Vindex。这里我们约定index的取值从1开始，即v&#x3D;(v1,v2…,vn)。下面介绍一种向量的稀疏表示方法。 如果v仅在少量维度上的取值不为0，则称其为稀疏向量。 例如当&#x3D;10时，v&#x3D;(0,0,0,5,0,0,-3,0,0,1)就是一个稀疏向量。 由于稀疏向量的非零值较少，我们可以通过仅存储非零值的方式来节省空间。具体来说，每个非零值都可以用一个(index,value)对来表示，即该向量在第index个维度上的取值Vindex&#x3D;value。在上面的例子中，v就可以表示为[(4,5)，(7，-3)，(10,1)]。 接下来给出这种稀疏表示一般化的定义。 ·对于任意一个n维整数向量v∈Z”，如果其在且仅在a个维度上取值不为0，则 可以唯一表示为：[(index1,valve1),(index2,valve2),···(indexa,valuea)] ·其中所有的index均为整数且满足： 1≤index1&lt;indew2&lt;···&lt;indexa≤n ·valuei:表示问量v在对应维度indexi上的非零值。 给出两个n维整数问量u,v∈Z”的稀疏表示，试计算它们的内积。 </p>
+<p>【输入格式】 从标准输入读入数据。 输入的第一行包含用空格分隔的三个正整数n、a和b，其中n表示向量u、v的 维数，a和b分别表示两个向量所含非零值的个数。 第二行到第a+1行输入向量的稀疏表示。第i+1行(1≤i≤a)包含用空格 分隔的两个整数indexi和valuei,表示Vindexj&#x3D;valuej 第a+2行到第a+b+1行输入向量v的稀疏表示。第j+a+1行(1≤j≤b) 包含用空格分隔的两个整数indexj;和valuej,表示Vindexj&#x3D;valuej </p>
+<p>【输出格式】 输出到标准输出。 输出一个整数，表示向量u和v的内积u·v。 </p>
+<p>【样例输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">10 3 4</span><br><span class="line">4 5</span><br><span class="line">7 -3</span><br><span class="line">10 1</span><br><span class="line">1 10</span><br><span class="line">4 20</span><br><span class="line">5 30</span><br><span class="line">7 40</span><br></pre></td></tr></table></figure>
 
 <p>【样例输出】</p>
@@ -1053,17 +991,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -1221,7 +1149,51 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JWT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Golang</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目实战</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Gorm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">分布式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">前缀和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">深度图像</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">世界坐标</a>
               </li>
             
             <div class="clearfix"></div>

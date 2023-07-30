@@ -171,18 +171,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>首先，要了解下世界坐标到图像的映射过程，考虑世界坐标点M(Xw,Yw,Zw)映射到图像点m(u,v)的过程，如下图所示：</p>
-<p><img src="https://img2022.cnblogs.com/blog/545378/202203/545378-20220318161349260-2010534016.png" alt="img"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%9B%BE%E5%83%8F%E8%BD%AC%E6%8D%A2%E4%B8%BA%E7%82%B9%E4%BA%91%E6%95%B0%E6%8D%AE%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/545378-20220318161349260-2010534016.png" alt="img"></p>
 <p><strong>形式化表示如下</strong>：</p>
-<p><img src="https://img2022.cnblogs.com/blog/545378/202203/545378-20220318161414719-892949689.png" alt="img"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%9B%BE%E5%83%8F%E8%BD%AC%E6%8D%A2%E4%B8%BA%E7%82%B9%E4%BA%91%E6%95%B0%E6%8D%AE%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/545378-20220318161414719-892949689.png" alt="img"></p>
 <p>u,v分别为图像坐标系下的任意坐标点。u0,v0分别为图像的中心坐标。xw,yw,zw表示世界坐标系下的三维坐标点。zc表示相机坐标的z轴值，即目标到相机的距离。R,T分别为外参矩阵的3x3旋转矩阵和3x1平移矩阵。</p>
 <p><strong>对外参矩阵的设置：由于世界坐标原点和相机原点是重合的，即没有旋转和平移，所以</strong></p>
-<p><img src="https://img2022.cnblogs.com/blog/545378/202203/545378-20220318161453684-97553231.png" alt="img"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%9B%BE%E5%83%8F%E8%BD%AC%E6%8D%A2%E4%B8%BA%E7%82%B9%E4%BA%91%E6%95%B0%E6%8D%AE%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/545378-20220318161453684-97553231.png" alt="img"></p>
 <p>相机坐标系和世界坐标系的坐标原点重合，因此相机坐标和世界坐标下的同一个物体具有相同的深度，即zc&#x3D;zw.于是公式可进一步简化为：</p>
-<p><img src="https://img2022.cnblogs.com/blog/545378/202203/545378-20220318161547547-572347478.png" alt="img"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%9B%BE%E5%83%8F%E8%BD%AC%E6%8D%A2%E4%B8%BA%E7%82%B9%E4%BA%91%E6%95%B0%E6%8D%AE%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/545378-20220318161547547-572347478.png" alt="img"></p>
 <p>从以上的变换矩阵公式，可以计算得到图像点[u,v]T 到世界坐标点[xw,yw,zw]T的变换公式:</p>
-<p><img src="https://img2022.cnblogs.com/blog/545378/202203/545378-20220318161616407-1391108753.png" alt="img"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%9B%BE%E5%83%8F%E8%BD%AC%E6%8D%A2%E4%B8%BA%E7%82%B9%E4%BA%91%E6%95%B0%E6%8D%AE%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/545378-20220318161616407-1391108753.png" alt="img"></p>
 <p>这里Zc是深度值，相机内参为：fx&#x3D;f&#x2F;dx, fy&#x3D; f&#x2F;dy, cx&#x3D;u0, cy &#x3D; v0;</p>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/05/v2-6296a73c317812a0d8654f5480d64095_1440w-300x110.png"></p>
+<p><img src="/%E6%B7%B1%E5%BA%A6%E5%9B%BE%E5%83%8F%E8%BD%AC%E6%8D%A2%E4%B8%BA%E7%82%B9%E4%BA%91%E6%95%B0%E6%8D%AE%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/v2-6296a73c317812a0d8654f5480d64095_1440w-300x110.png"></p>
 <h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">OBCameraNode::Get_World_Pix_By_Depth</span><span class="params">(<span class="type">float</span> k[],<span class="type">float</span> scale,<span class="type">int</span> color_x, <span class="type">int</span> color_y, <span class="type">short</span> dep_z, <span class="type">float</span>&amp; world_x, <span class="type">float</span>&amp; world_y, <span class="type">float</span>&amp; world_z)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="type">float</span> u=(<span class="type">float</span>)color_x;</span><br><span class="line">    <span class="type">float</span> v=(<span class="type">float</span>)color_y;</span><br><span class="line">    <span class="type">float</span> depthv =dep_z*scale;</span><br><span class="line">    <span class="comment">// k[0]:fx k[1]:cx </span></span><br><span class="line">    <span class="comment">// k[2]:fy k[3]:cy</span></span><br><span class="line">    world_z = depthv;</span><br><span class="line">    world_x = (u - k[<span class="number">1</span>]) * depthv / k[<span class="number">0</span>];</span><br><span class="line">    world_y = (v - k[<span class="number">3</span>]) * depthv / k[<span class="number">2</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
@@ -191,13 +191,28 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">深度图像</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">世界坐标</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
+        			<a href="/categories/编程杂谈/" class="article-tag-list-link color5">编程杂谈</a>
 
         		</li>
       		
@@ -257,8 +272,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="ROS2入门篇"><a href="#ROS2入门篇" class="headerlink" title="ROS2入门篇"></a>ROS2入门篇</h1><h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><p><img src="https://fishros.com/d2lros2/humble/chapt1/advanced/2.%E4%B8%AD%E9%97%B4%E4%BB%B6DDS%E6%9E%B6%E6%9E%84/imgs/v2-471abbce0a08b249637dc603f56dc9cf_b.png" alt="img"></p>
-<p><img src="https://fishros.com/d2lros2/humble/chapt1/advanced/1.ROS2%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/imgs/image-20220602204152352.png" alt="image-20220602204152352"></p>
+        <h1 id="ROS2入门篇"><a href="#ROS2入门篇" class="headerlink" title="ROS2入门篇"></a>ROS2入门篇</h1><h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><p><img src="/ros2%E5%85%A5%E9%97%A8%E7%AF%87/v2-471abbce0a08b249637dc603f56dc9cf_b.png" alt="img"></p>
+<p><img src="/ros2%E5%85%A5%E9%97%A8%E7%AF%87/image-20220602204152352.png" alt="image-20220602204152352"></p>
 <h2 id="概念简介"><a href="#概念简介" class="headerlink" title="概念简介"></a>概念简介</h2><h3 id="客户端库-RCL"><a href="#客户端库-RCL" class="headerlink" title="客户端库 RCL"></a>客户端库 RCL</h3><p>RCL（ROS Client Library）ROS客户端库，其实就是ROS的一种API，提供了对ROS话题、服务、参数、Action等接口。</p>
 <h3 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h3><p>ROS1的中间件是ROS组织自己基于TCP&#x2F;UDP机制建立的。</p>
 <p>ROS2采用了第三方的DDS作为中间件，将DDS服务接口进行了一层抽象，保证了上层应用层调用接口的统一性。</p>
@@ -302,7 +317,7 @@
 <li><p>动作-Action</p>
 </li>
 <li><p>参数-parameters</p>
-<p><img src="https://fishros.com/d2lros2/humble/chapt2/get_started/1.ROS2%E8%8A%82%E7%82%B9%E4%BB%8B%E7%BB%8D/imgs/Nodes-TopicandService-16542449255392.gif" alt="Nodes-TopicandService"></p>
+<p><img src="/ros2%E5%85%A5%E9%97%A8%E7%AF%87/Nodes-TopicandService-16542449255392.gif" alt="Nodes-TopicandService"></p>
 </li>
 </ul>
 <h3 id="节点相关的CLI"><a href="#节点相关的CLI" class="headerlink" title="节点相关的CLI"></a>节点相关的CLI</h3><p>运行节点(常用)</p>
@@ -332,7 +347,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
+        			<a href="/categories/编程杂谈/" class="article-tag-list-link color5">编程杂谈</a>
 
         		</li>
       		
@@ -396,20 +411,38 @@
 <p>项目核心信息：简易版抖音后端服务</p>
 <p>Github 地址：<a target="_blank" rel="noopener" href="https://github.com/qiong-14/EasyDouYin">https://github.com/qiong-14/EasyDouYin</a></p>
 </blockquote>
-<h2 id="二、项目分工"><a href="#二、项目分工" class="headerlink" title="二、项目分工"></a>二、项目分工</h2><p><strong>团队成员</strong></p>
-<p><strong>主要贡献</strong></p>
-<p>万禹</p>
-<p>负责项目文件结构管理、用户接口、视频点赞、喜欢列表的接口设计以及对应数据库设计</p>
-<p>韩冰</p>
-<p>负责视频Feed流、用户视频上传以及对应数据库设计，minio对象储存服务，redis设计</p>
-<p>范乃丹</p>
-<p>负责用户关注操作，查询用户关注列表的接口设计以及对应数据库设计</p>
-<p>聂嘉璐</p>
-<p>负责查询用户粉丝列表，用户好友列表接口设计以及对应数据库设计</p>
-<p>徐凯凯</p>
-<p>负责JWT鉴权，redis存储userId，消息操作、聊天记录接口，Demo视频录制</p>
-<p>袁博艺</p>
-<p>负责评论功能和评论列表接口的设计与实现</p>
+<h2 id="二、项目分工"><a href="#二、项目分工" class="headerlink" title="二、项目分工"></a>二、项目分工</h2><table>
+<thead>
+<tr>
+<th><strong>团队成员</strong></th>
+<th><strong>主要贡献</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>万禹</td>
+<td>负责项目文件结构管理、用户接口、视频点赞、喜欢列表的接口设计以及对应数据库设计</td>
+</tr>
+<tr>
+<td>韩冰</td>
+<td>负责视频Feed流、用户视频上传以及对应数据库设计，minio对象储存服务，redis设计</td>
+</tr>
+<tr>
+<td>范乃丹</td>
+<td>负责用户关注操作，查询用户关注列表的接口设计以及对应数据库设计</td>
+</tr>
+<tr>
+<td>聂嘉璐</td>
+<td>负责查询用户粉丝列表，用户好友列表接口设计以及对应数据库设计</td>
+</tr>
+<tr>
+<td>徐凯凯</td>
+<td>负责JWT鉴权，redis存储userId，消息操作、聊天记录接口，Demo视频录制</td>
+</tr>
+<tr>
+<td>袁博艺</td>
+<td>负责评论功能和评论列表接口的设计与实现</td>
+</tr>
+</tbody></table>
 <h2 id="三、项目实现"><a href="#三、项目实现" class="headerlink" title="三、项目实现"></a>三、项目实现</h2><h3 id="3-1-技术选型与相关开发文档"><a href="#3-1-技术选型与相关开发文档" class="headerlink" title="3.1 技术选型与相关开发文档"></a>3.1 技术选型与相关开发文档</h3><h4 id="3-1-1-Web开发套件"><a href="#3-1-1-Web开发套件" class="headerlink" title="3.1.1 Web开发套件"></a>3.1.1 Web开发套件</h4><ul>
 <li><strong><a target="_blank" rel="noopener" href="https://github.com/cloudwego/hertz">Hertz</a></strong></li>
 </ul>
@@ -422,135 +455,272 @@
 <h4 id="3-1-3-对象存储服务的应用"><a href="#3-1-3-对象存储服务的应用" class="headerlink" title="3.1.3 对象存储服务的应用"></a>3.1.3 对象存储服务的应用</h4><p>视频的元信息需要持久化存储到关系型数据库, 包括视频的标题、封面、所有者、视频的标签以及当前的状态(待审核、已审核待上线、待修改、已删除)。</p>
 <p>视频的封面和视频本身属于超大的不定规模的二进制数据, 可以存到文件系统中, 以FTP或基于FTP的方式向外访问, 但这种方式有很多弊端, 比如视频链接可能会长期有效, 给服务器造成很大负担, 如果视频被删除, 需要同步删除视频本身以避免视频泄露, 以及潜在的FTP安全漏洞.</p>
 <p>基于以上考量, 这样的二进制数据存储到对象存储服务, 如MinIO中. 经过了解, Minio可以产生仅在一段时间内有效的URL传递到前端. <a target="_blank" rel="noopener" href="https://www.minio.org.cn/">MinIO官方</a>也有<a target="_blank" rel="noopener" href="https://github.com/minio/minio-go">Go的SDK</a>方便开发者使用.</p>
-<h4 id="3-1-4-Redis对MySQL慢查询的补充"><a href="#3-1-4-Redis对MySQL慢查询的补充" class="headerlink" title="3.1.4 Redis对MySQL慢查询的补充"></a>3.1.4 Redis对MySQL慢查询的补充</h4><h3 id="3-2-架构设计"><a href="#3-2-架构设计" class="headerlink" title="3.2 架构设计"></a>3.2 架构设计</h3><p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/16772272045911.png" alt="img"></p>
-<h3 id="3-3-项目代码介绍"><a href="#3-3-项目代码介绍" class="headerlink" title="3.3 项目代码介绍"></a>3.3 项目代码介绍</h3><p>目录</p>
-<p>文件</p>
-<p>说明</p>
-<p>biz&#x2F;handler&#x2F;</p>
-<p>路由处理函数</p>
-<p>基础接口</p>
-<p>feed.go</p>
-<p><strong>视频流接口</strong></p>
-<p>user.go</p>
-<p><strong>用户注册</strong><br><strong>用户登录</strong><br><strong>用户信息</strong></p>
-<p>publish.go</p>
-<p><strong>视频投稿</strong><br><strong>发布列表</strong></p>
-<p>互动接口</p>
-<p>comment.go</p>
-<p><strong>评论操作</strong><br><strong>评论列表</strong></p>
-<p>favorite.go</p>
-<p><strong>赞操作</strong><br><strong>喜欢列表</strong></p>
-<p>社交接口</p>
-<p>message.go</p>
-<p><strong>聊天记录</strong><br><strong>消息操作</strong></p>
-<p>relation.go</p>
-<p><strong>关系操作</strong><br><strong>用户关注列表</strong><br><strong>用户好友列表</strong></p>
-<p>biz&#x2F;resp&#x2F;</p>
-<p>common.go</p>
-<p>响应结构体定义</p>
-<p>biz&#x2F;router</p>
-<p>register.go</p>
-<p>路由注册</p>
-<p>configs&#x2F;sql</p>
-<p>init.sql</p>
-<p>数据库初始化语句</p>
-<p>constants&#x2F;</p>
-<p>constant.go</p>
-<p>项目中定义的常量内容</p>
-<p>dal&#x2F;</p>
-<p>数据库相关内容</p>
-<p>init.go</p>
-<p>数据库初始化</p>
-<p>comment.go</p>
-<p>评论表 comment</p>
-<p>like.go</p>
-<p>点赞表 like_video</p>
-<p>message.go</p>
-<p>消息表 message</p>
-<p>relation.go</p>
-<p>社交表 follow</p>
-<p>user.go</p>
-<p>用户表 user</p>
-<p>video.go</p>
-<p>视频表 video</p>
-<p>middleware&#x2F;jwt&#x2F;</p>
-<p>jwt.go</p>
-<p>jwt鉴权</p>
-<p>minio.go</p>
-<p>minio对象储存服务</p>
-<p>redis.go</p>
-<p>redis缓存</p>
-<p>service&#x2F;</p>
-<p>user.go</p>
-<p>带缓存的用户操作接口</p>
-<p>video.go</p>
-<p>带缓存的视频操作接口</p>
-<p>tools&#x2F;</p>
-<p>common.go</p>
-<p>项目公用函数</p>
-<p>.&#x2F;</p>
-<p>main.go</p>
-<p>项目入口</p>
-<h3 id="3-4-数据库表设计"><a href="#3-4-数据库表设计" class="headerlink" title="3.4 数据库表设计"></a>3.4 数据库表设计</h3><p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/16772272300534.png" alt="img"></p>
+<h4 id="3-1-4-Redis对MySQL慢查询的补充"><a href="#3-1-4-Redis对MySQL慢查询的补充" class="headerlink" title="3.1.4 Redis对MySQL慢查询的补充"></a>3.1.4 Redis对MySQL慢查询的补充</h4><h3 id="3-2-架构设计"><a href="#3-2-架构设计" class="headerlink" title="3.2 架构设计"></a>3.2 架构设计</h3><p><img src="/bytedance-camp-note-17/16772272045911.png" alt="img"></p>
+<h3 id="3-3-项目代码介绍"><a href="#3-3-项目代码介绍" class="headerlink" title="3.3 项目代码介绍"></a>3.3 项目代码介绍</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><table>
+<thead>
+<tr>
+<th>目录</th>
+<th>文件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>biz&#x2F;handler&#x2F;</td>
+<td></td>
+<td>路由处理函数</td>
+</tr>
+<tr>
+<td>基础接口</td>
+<td>feed.go</td>
+<td><strong>视频流接口</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>user.go</td>
+<td><strong>用户注册</strong><br /><strong>用户登录</strong><br /><strong>用户信息</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>publish.go</td>
+<td><strong>视频投稿</strong><br /><strong>发布列表</strong></td>
+</tr>
+<tr>
+<td>互动接口</td>
+<td>comment.go</td>
+<td><strong>评论操作</strong><br /><strong>评论列表</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>favorite.go</td>
+<td><strong>赞操作</strong><br /><strong>喜欢列表</strong></td>
+</tr>
+<tr>
+<td>社交接口</td>
+<td>message.go</td>
+<td><strong>聊天记录</strong><br /><strong>消息操作</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>relation.go</td>
+<td><strong>关系操作</strong><br /><strong>用户关注列表</strong><br /><strong>用户好友列表</strong></td>
+</tr>
+<tr>
+<td>biz&#x2F;resp&#x2F;</td>
+<td>common.go</td>
+<td>响应结构体定义</td>
+</tr>
+<tr>
+<td>biz&#x2F;router</td>
+<td>register.go</td>
+<td>路由注册</td>
+</tr>
+<tr>
+<td>configs&#x2F;sql</td>
+<td>init.sql</td>
+<td>数据库初始化语句</td>
+</tr>
+<tr>
+<td>constants&#x2F;</td>
+<td>constant.go</td>
+<td>项目中定义的常量内容</td>
+</tr>
+<tr>
+<td>dal&#x2F;</td>
+<td></td>
+<td>数据库相关内容</td>
+</tr>
+<tr>
+<td></td>
+<td>init.go</td>
+<td>数据库初始化</td>
+</tr>
+<tr>
+<td></td>
+<td>comment.go</td>
+<td>评论表 comment</td>
+</tr>
+<tr>
+<td></td>
+<td>like.go</td>
+<td>点赞表 like_video</td>
+</tr>
+<tr>
+<td></td>
+<td>message.go</td>
+<td>消息表 message</td>
+</tr>
+<tr>
+<td></td>
+<td>relation.go</td>
+<td>社交表 follow</td>
+</tr>
+<tr>
+<td></td>
+<td>user.go</td>
+<td>用户表 user</td>
+</tr>
+<tr>
+<td></td>
+<td>video.go</td>
+<td>视频表 video</td>
+</tr>
+<tr>
+<td>middleware&#x2F;jwt&#x2F;</td>
+<td>jwt.go</td>
+<td>jwt鉴权</td>
+</tr>
+<tr>
+<td></td>
+<td>minio.go</td>
+<td>minio对象储存服务</td>
+</tr>
+<tr>
+<td></td>
+<td>redis.go</td>
+<td>redis缓存</td>
+</tr>
+<tr>
+<td>service&#x2F;</td>
+<td>user.go</td>
+<td>带缓存的用户操作接口</td>
+</tr>
+<tr>
+<td></td>
+<td>video.go</td>
+<td>带缓存的视频操作接口</td>
+</tr>
+<tr>
+<td>tools&#x2F;</td>
+<td>common.go</td>
+<td>项目公用函数</td>
+</tr>
+<tr>
+<td>.&#x2F;</td>
+<td>main.go</td>
+<td>项目入口</td>
+</tr>
+</tbody></table>
+<h3 id="3-4-数据库表设计"><a href="#3-4-数据库表设计" class="headerlink" title="3.4 数据库表设计"></a>3.4 数据库表设计</h3><p><img src="/bytedance-camp-note-17/16772272300534.png" alt="img"></p>
 <p>以上为数据库表的关系图，根据功能设计我们设计了六张表，红色为主表，其他表基于这两张表来拓展功能：</p>
-<p>表名</p>
-<p>用途</p>
-<p>关联的表</p>
-<p>主要键及其作用</p>
-<p><strong>user</strong></p>
-<p>储存用户名和密码</p>
-<p>name 用户名（账号）password 用户密码（加密后）</p>
-<p><strong>video</strong></p>
-<p>储存视频相关信息</p>
-<p>owner_id 视频作者idtitle 视频标题label 视频标签likes_count 点赞人数</p>
-<p><strong>like_video</strong></p>
-<p>储存用户对视频的点赞信息</p>
-<p>user video</p>
-<p>user_id 用户idvideo_id 点赞的视频id</p>
-<p><strong>comment_video</strong></p>
-<p>储存用户对视频的评论信息</p>
-<p>user video</p>
-<p>user_id 用户idvideo_id 评论的视频id</p>
-<p><strong>message</strong></p>
-<p>储存用户之间发送的消息信息</p>
-<p>user</p>
-<p>from_user_id 发送消息用户idto_user_id 接受消息用户idcontent 消息内容</p>
-<p><strong>follow</strong></p>
-<p>储存用户之间的关注信息</p>
-<p>user</p>
-<p>followed_id 被关注用户idfollow_id 关注者id</p>
+<table>
+<thead>
+<tr>
+<th align="center">表名</th>
+<th align="center">用途</th>
+<th align="center">关联的表</th>
+<th align="center">主要键及其作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>user</strong></td>
+<td align="center">储存用户名和密码</td>
+<td align="center"></td>
+<td align="center">name 用户名（账号）password 用户密码（加密后）</td>
+</tr>
+<tr>
+<td align="center"><strong>video</strong></td>
+<td align="center">储存视频相关信息</td>
+<td align="center"></td>
+<td align="center">owner_id 视频作者idtitle 视频标题label 视频标签likes_count 点赞人数</td>
+</tr>
+<tr>
+<td align="center"><strong>like_video</strong></td>
+<td align="center">储存用户对视频的点赞信息</td>
+<td align="center">user video</td>
+<td align="center">user_id 用户idvideo_id 点赞的视频id</td>
+</tr>
+<tr>
+<td align="center"><strong>comment_video</strong></td>
+<td align="center">储存用户对视频的评论信息</td>
+<td align="center">user video</td>
+<td align="center">user_id 用户idvideo_id 评论的视频id</td>
+</tr>
+<tr>
+<td align="center"><strong>message</strong></td>
+<td align="center">储存用户之间发送的消息信息</td>
+<td align="center">user</td>
+<td align="center">from_user_id 发送消息用户idto_user_id 接受消息用户idcontent 消息内容</td>
+</tr>
+<tr>
+<td align="center"><strong>follow</strong></td>
+<td align="center">储存用户之间的关注信息</td>
+<td align="center">user</td>
+<td align="center">followed_id 被关注用户idfollow_id 关注者id</td>
+</tr>
+</tbody></table>
 <h3 id="3-5-用户名验证和密码强度评估"><a href="#3-5-用户名验证和密码强度评估" class="headerlink" title="3.5 用户名验证和密码强度评估"></a>3.5 用户名验证和密码强度评估</h3><p>对于用户注册时输入的用户名和密码我们可以在后端进行进行验证，如果用户名不符合特定格式不允许用户进行注册（本项目使用的是邮箱格式，只有符合邮箱格式的用户名才能通过注册），以及对于密码强度较弱的用户拒绝注册。采用正则表达式匹配用户名和密码字符串实现以上功能。</p>
-<p>分数</p>
-<p>0</p>
-<p>2</p>
-<p>3</p>
-<p>5</p>
-<p>10</p>
-<p>15</p>
-<p>20</p>
-<p>25</p>
-<p>密码长度</p>
-<p>&lt;8</p>
-<p>5~8</p>
-<p>8~10</p>
-<p>&gt;&#x3D;10</p>
-<p>英文大小写</p>
-<p>无字母</p>
-<p>大写或小写</p>
-<p>大写+小写</p>
-<p>数字个数</p>
-<p>无数字</p>
-<p>1~3</p>
-<p>&gt;&#x3D;3</p>
-<p>特殊字符个数</p>
-<p>1</p>
-<p>&gt;1</p>
-<p>奖励分</p>
-<p>数字+字母大写或小写</p>
-<p>数字+特殊字符+字母大写或小写</p>
-<p>数字+特殊字符+字母大写+字母小写</p>
+<table>
+<thead>
+<tr>
+<th>分数</th>
+<th>0</th>
+<th>2</th>
+<th>3</th>
+<th>5</th>
+<th>10</th>
+<th>15</th>
+<th>20</th>
+<th>25</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>密码长度</td>
+<td>&lt;8</td>
+<td></td>
+<td></td>
+<td>5~8</td>
+<td></td>
+<td>8~10</td>
+<td></td>
+<td>&gt;&#x3D;10</td>
+</tr>
+<tr>
+<td>英文大小写</td>
+<td>无字母</td>
+<td></td>
+<td></td>
+<td></td>
+<td>大写或小写</td>
+<td></td>
+<td>大写+小写</td>
+<td></td>
+</tr>
+<tr>
+<td>数字个数</td>
+<td>无数字</td>
+<td></td>
+<td></td>
+<td></td>
+<td>1~3</td>
+<td></td>
+<td>&gt;&#x3D;3</td>
+<td></td>
+</tr>
+<tr>
+<td>特殊字符个数</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+<td>&gt;1</td>
+</tr>
+<tr>
+<td>奖励分</td>
+<td></td>
+<td>数字+字母大写或小写</td>
+<td>数字+特殊字符+字母大写或小写</td>
+<td>数字+特殊字符+字母大写+字母小写</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 <h2 id="四、测试结果"><a href="#四、测试结果" class="headerlink" title="四、测试结果"></a>四、测试结果</h2><p><strong>通过demo的测试函数进行功能测试：</strong></p>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/16772272349127.png" alt="img"></p>
+<p><img src="/bytedance-camp-note-17/16772272349127.png" alt="img"></p>
 <h2 id="五、项目总结与反思"><a href="#五、项目总结与反思" class="headerlink" title="五、项目总结与反思"></a>五、项目总结与反思</h2><blockquote>
 <ol>
 <li>目前仍存在的问题</li>
@@ -572,23 +742,32 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Golang</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目实战</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
+        			<a href="/categories/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
 
         		</li>
       		
@@ -711,23 +890,24 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
+        			<a href="/categories/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
 
         		</li>
       		
@@ -791,7 +971,7 @@
 <h3 id="消息队列是什么"><a href="#消息队列是什么" class="headerlink" title="消息队列是什么"></a>消息队列是什么</h3><ul>
 <li>解耦</li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/c5be8cc7291f46598766c8f510426ac3.png" alt="解耦"></p>
+<p><img src="/bytedance-camp-note-15/c5be8cc7291f46598766c8f510426ac3.png" alt="解耦"></p>
 <p>订单系统：用户下单后，订单系统完成持久化处理，将消息写入消息队列，返回用户订单下单成功</p>
 <p>库存系统：订阅下单的消息，采用拉&#x2F;推的方式，获取下单信息，库存系统根据下单信息，进行库存操作</p>
 <p>假如：在下单时库存系统不能正常使用。也不影响正常下单，因为下单后，订单系统写入消息队列就不再关心其他的后续操作了。实现订单系统与库存系统的应用解耦</p>
@@ -807,12 +987,14 @@
 <ul>
 <li>异步</li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MjYyMjIwMA==,size_16,color_FFFFFF,t_70.png" alt="异步"></p>
+<p><img src="/bytedance-camp-note-15/watermark,type_ZmFuZ3poZW5naGVpdGk.png" alt="watermark,type_ZmFuZ3poZW5naGVpdGk"></p>
 <p>按照以上约定，用户的响应时间相当于是注册信息写入数据库的时间，也就是50毫秒。注册邮件，发送短信写入消息队列后，直接返回，因此写入消息队列的速度很快，基本可以忽略，因此用户的响应时间可能是50毫秒。因此架构改变后，系统的吞吐量提高到每秒20 QPS。比串行提高了3倍，比并行提高了两倍。</p>
 <ul>
 <li>日志处理</li>
 </ul>
-<p>日志处理是指将消息队列用在日志处理中，比如<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Kafka&spm=1001.2101.3001.7020">Kafka</a>的应用，解决大量日志传输的问题。架构简化如下 <img src="https://www.kkkode.top/wp-content/uploads/2023/02/ed51387339de4828a73cd377e43f1130.png" alt="日志处理"> 日志采集客户端，负责日志数据采集，定时写受写入Kafka队列</p>
+<p>日志处理是指将消息队列用在日志处理中，比如<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Kafka&spm=1001.2101.3001.7020">Kafka</a>的应用，解决大量日志传输的问题。架构简化如下</p>
+<p> <img src="/bytedance-camp-note-15/ed51387339de4828a73cd377e43f1130.png" alt="日志处理"> </p>
+<p>日志采集客户端，负责日志数据采集，定时写受写入Kafka队列</p>
 <p>Kafka消息队列，负责日志数据的接收，存储和转发</p>
 <p>日志处理应用：订阅并消费kafka队列中的日志数据</p>
 <h3 id="消息队列的前世今生"><a href="#消息队列的前世今生" class="headerlink" title="消息队列的前世今生"></a>消息队列的前世今生</h3><h4 id="消息队列-Kafka"><a href="#消息队列-Kafka" class="headerlink" title="消息队列-Kafka"></a>消息队列-Kafka</h4><p>kafka使用场景，业务日志、用户行为数据、Metrics数据</p>
@@ -833,7 +1015,7 @@
 <li>Selector&#x2F;Processor：存在于RPC服务端，由于服务器端某一个RPC接口的实现的特性（它并不知道自己是一个将要被RPC提供给第三方系统调用的服务）。所以在RPC框架中应该有一种“负责执行RPC接口实现”的角色。它负责了包括：管理RPC接口的注册、判断客户端的请求权限、控制接口实现类的执行在内的各种工作。</li>
 <li>IDL：实际上IDL（接口定义语言）并不是RPC实现中所必须的。但是需要跨语言的RPC框架一定会有IDL部分的存在。这是因为要找到一个各种语言能够理解的消息结构、接口定义的描述形式。如果您的RPC实现没有考虑跨语言性，那么IDL部分就不需要包括，例如JAVA RMI因为就是为了在JAVA语言间进行使用，所以JAVA RMI就没有相应的IDL。</li>
 </ul>
-<h3 id="RPC-框架分层设计"><a href="#RPC-框架分层设计" class="headerlink" title="RPC 框架分层设计"></a>RPC 框架分层设计</h3><p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/6d12fff7fde5429b814f15c64fc4a261tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="RPC 框架分层设计"></p>
+<h3 id="RPC-框架分层设计"><a href="#RPC-框架分层设计" class="headerlink" title="RPC 框架分层设计"></a>RPC 框架分层设计</h3><p><img src="/bytedance-camp-note-15/6d12fff7fde5429b814f15c64fc4a261tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="RPC 框架分层设计"></p>
 <h4 id="编解码层"><a href="#编解码层" class="headerlink" title="编解码层"></a>编解码层</h4><ul>
 <li><p>数据格式</p>
 <ul>
@@ -854,16 +1036,16 @@
 <li><p>生成代码和编解码层相互依赖，框架的编解码应当具备扩展任意编解码协议的能力</p>
 </li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/7ffa6428b4214c6590a3b8a6fc106390tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="编解码层"></p>
+<p><img src="/bytedance-camp-note-15/7ffa6428b4214c6590a3b8a6fc106390tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="编解码层"></p>
 <h4 id="协议层"><a href="#协议层" class="headerlink" title="协议层"></a>协议层</h4><ul>
 <li>以 Thrift 的 THeader 协议为例</li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/228aa11d265240c3aad35736194de94ftplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="协议层"></p>
+<p><img src="/bytedance-camp-note-15/228aa11d265240c3aad35736194de94ftplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="协议层"></p>
 <ul>
 <li>协议解析</li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/ae3b22f299dc4e4a8df34793263055cbtplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="协议解析"></p>
-<h4 id="网络通信层"><a href="#网络通信层" class="headerlink" title="网络通信层"></a>网络通信层</h4><p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/c4e3c7f3fb234b6f9f1102fca16818ddtplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="网络通信层"></p>
+<p><img src="/bytedance-camp-note-15/ae3b22f299dc4e4a8df34793263055cbtplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="协议解析"></p>
+<h4 id="网络通信层"><a href="#网络通信层" class="headerlink" title="网络通信层"></a>网络通信层</h4><p><img src="/bytedance-camp-note-15/c4e3c7f3fb234b6f9f1102fca16818ddtplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="网络通信层"></p>
 <ul>
 <li><p>阻塞 IO 下，耗费一个线程去阻塞在 read(fd) 去等待用足够多的数据可读并返回。</p>
 </li>
@@ -885,17 +1067,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
+        			<a href="/categories/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
 
         		</li>
       		
@@ -1022,23 +1194,28 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JWT</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Golang</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
+        			<a href="/categories/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
 
         		</li>
       		
@@ -1100,7 +1277,7 @@
       
         <h2 id="基本git命令"><a href="#基本git命令" class="headerlink" title="基本git命令"></a>基本git命令</h2><h3 id="查看仓库名"><a href="#查看仓库名" class="headerlink" title="查看仓库名"></a>查看仓库名</h3><p>git remote</p>
 <h3 id="查看推送至仓库的用户名和邮箱"><a href="#查看推送至仓库的用户名和邮箱" class="headerlink" title="查看推送至仓库的用户名和邮箱"></a>查看推送至仓库的用户名和邮箱</h3><p>git config user.name git config user.email</p>
-<h3 id="设置推送至仓库的用户名和邮箱"><a href="#设置推送至仓库的用户名和邮箱" class="headerlink" title="设置推送至仓库的用户名和邮箱"></a>设置推送至仓库的用户名和邮箱</h3><p>git config –global user.email “<a href="mailto:&#x79;&#111;&#x75;&#x40;&#x65;&#120;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;">&#x79;&#111;&#x75;&#x40;&#x65;&#120;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;</a>“</p>
+<h3 id="设置推送至仓库的用户名和邮箱"><a href="#设置推送至仓库的用户名和邮箱" class="headerlink" title="设置推送至仓库的用户名和邮箱"></a>设置推送至仓库的用户名和邮箱</h3><p>git config –global user.email “<a href="mailto:&#x79;&#x6f;&#117;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#x63;&#111;&#109;">&#x79;&#x6f;&#117;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#x63;&#111;&#109;</a>“</p>
 <p>git config –global user.name “Your Name”</p>
 <p>–global 对当前用户所有仓库有效</p>
 <p>–local 只对某个仓库有效</p>
@@ -1148,17 +1325,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/编程杂谈/" class="article-tag-list-link color5">编程杂谈</a>
+        			<a href="/categories/编程杂谈/" class="article-tag-list-link color5">编程杂谈</a>
 
         		</li>
       		
@@ -1247,22 +1414,22 @@
 <li><p>Linux命令-CronJob</p>
 </li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/e9bc7cae-8ada-457d-8332-01522341cf15.png" alt="e9bc7cae-8ada-457d-8332-01522341cf15"></p>
+<p><img src="/bytedance-camp-note-12/e9bc7cae-8ada-457d-8332-01522341cf15.png" alt="e9bc7cae-8ada-457d-8332-01522341cf15"></p>
 <ul>
 <li><p>单机定时任务-Timer、Ticker</p>
 </li>
 <li><p>单机定时任务-ScheduledExecutorService</p>
 </li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/aa6e926e-ff42-4ed6-9ded-7e2dfc2d1db8.png" alt="aa6e926e-ff42-4ed6-9ded-7e2dfc2d1db8"></p>
+<p><img src="/bytedance-camp-note-12/aa6e926e-ff42-4ed6-9ded-7e2dfc2d1db8.png" alt="aa6e926e-ff42-4ed6-9ded-7e2dfc2d1db8"></p>
 <ul>
 <li>任务调度- Quartz</li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/44a76c7c-5045-4957-a5c9-27f23390c20d.png" alt="44a76c7c-5045-4957-a5c9-27f23390c20d"></p>
+<p><img src="/bytedance-camp-note-12/44a76c7c-5045-4957-a5c9-27f23390c20d.png" alt="44a76c7c-5045-4957-a5c9-27f23390c20d"></p>
 <ul>
 <li>分布式定时任务</li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/%E4%B8%8B%E8%BD%BD.png" alt="下载"></p>
+<p><img src="/bytedance-camp-note-12/%E4%B8%8B%E8%BD%BD.png" alt="下载"></p>
 <h3 id="分布式定时任务"><a href="#分布式定时任务" class="headerlink" title="分布式定时任务"></a>分布式定时任务</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul>
 <li>定时任务是指系统为了<strong>自动</strong>完成特定任务，<strong>实时、延时、周期</strong>性完成任务调度的过程。</li>
 <li>分布式定时任务是把分散的、可靠性差的定时任务纳入统一的<strong>平台</strong>，并实现集群管理调度和<strong>分布式部署</strong>的一种定时任务的管理方式。</li>
@@ -1279,7 +1446,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/6a5b73f1-3a9e-461f-95c4-0d518269009a.png" alt="6a5b73f1-3a9e-461f-95c4-0d518269009a"></p>
+<p><img src="/bytedance-camp-note-12/6a5b73f1-3a9e-461f-95c4-0d518269009a.png" alt="6a5b73f1-3a9e-461f-95c4-0d518269009a"></p>
 <p><strong>发奖金额计算：MapReduce 定时开奖：Map</strong></p>
 <h4 id="业内定时任务框架"><a href="#业内定时任务框架" class="headerlink" title="业内定时任务框架"></a>业内定时任务框架</h4><ul>
 <li><p>大众点评Xxl-job</p>
@@ -1295,15 +1462,15 @@
 <h2 id="三、实现原理"><a href="#三、实现原理" class="headerlink" title="三、实现原理"></a>三、实现原理</h2><h3 id="整体架构"><a href="#整体架构" class="headerlink" title="整体架构"></a>整体架构</h3><ul>
 <li>核心架构</li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/62fdceaada184704b53f995b04bfa6a1tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="img"></p>
+<p><img src="/bytedance-camp-note-12/62fdceaada184704b53f995b04bfa6a1tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="img"></p>
 <ul>
 <li>数据流</li>
 </ul>
-<p>![下载 (1)](<a target="_blank" rel="noopener" href="https://www.kkkode.top/wp-content/uploads/2023/02/%E4%B8%8B%E8%BD%BD">https://www.kkkode.top/wp-content/uploads/2023/02/下载</a> (1).png)</p>
+<p>![下载 (1)](bytedance-camp-note-12&#x2F;下载 (1).png)</p>
 <ul>
 <li>功能架构</li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/c73571bc-6b2f-468d-b30b-285ec655ed01.png" alt="c73571bc-6b2f-468d-b30b-285ec655ed01"></p>
+<p><img src="/bytedance-camp-note-12/c73571bc-6b2f-468d-b30b-285ec655ed01.png" alt="c73571bc-6b2f-468d-b30b-285ec655ed01"></p>
 <h3 id="控制台Admin"><a href="#控制台Admin" class="headerlink" title="控制台Admin"></a>控制台Admin</h3><ul>
 <li>任务：Job，任务元数据</li>
 <li>任务实例：JobInstance,周期任务会生 成多个任务实例</li>
@@ -1313,13 +1480,13 @@
 <h3 id="触发器Trigger"><a href="#触发器Trigger" class="headerlink" title="触发器Trigger"></a>触发器Trigger</h3><ul>
 <li>定期扫描+ 延时消息（腾讯、字节方案）</li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/1f44bdfc-1f7b-4444-8dd8-9b9e600dcd3d.png" alt="1f44bdfc-1f7b-4444-8dd8-9b9e600dcd3d"></p>
+<p><img src="/bytedance-camp-note-12/1f44bdfc-1f7b-4444-8dd8-9b9e600dcd3d.png" alt="1f44bdfc-1f7b-4444-8dd8-9b9e600dcd3d"></p>
 <ul>
 <li><p>时间轮（Quartz方案）</p>
 <p>时间轮是一种高效利用线程资源进行批量化调度的一种调度模型。时间轮是一个存储环形队列，底层采用数组实现，数组中的每个元素可以存放一个定时任务列表。</p>
 </li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/b2e7c91a-2ac8-4f2a-885d-8bfb00dd1317.png" alt="b2e7c91a-2ac8-4f2a-885d-8bfb00dd1317"></p>
+<p><img src="/bytedance-camp-note-12/b2e7c91a-2ac8-4f2a-885d-8bfb00dd1317.png" alt="b2e7c91a-2ac8-4f2a-885d-8bfb00dd1317"></p>
 <ul>
 <li>高可用<ul>
 <li>存储：不同国别、业务做资源隔离</li>
@@ -1357,7 +1524,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="执行器Executor"><a href="#执行器Executor" class="headerlink" title="执行器Executor"></a>执行器Executor</h4><p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/1a9fc62a-132c-4e3f-8141-0c8691379b6e.png" alt="1a9fc62a-132c-4e3f-8141-0c8691379b6e"></p>
+<h4 id="执行器Executor"><a href="#执行器Executor" class="headerlink" title="执行器Executor"></a>执行器Executor</h4><p><img src="/bytedance-camp-note-12/1a9fc62a-132c-4e3f-8141-0c8691379b6e.png" alt="1a9fc62a-132c-4e3f-8141-0c8691379b6e"></p>
 <h2 id="四、业务应用"><a href="#四、业务应用" class="headerlink" title="四、业务应用"></a>四、业务应用</h2><p>所有需要定时、延时、周期性执行任务的业务场景，都可以考虑使用分布式定时任务</p>
 <ul>
 <li>电商<ul>
@@ -1402,17 +1569,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
+        			<a href="/categories/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
 
         		</li>
       		
@@ -1474,15 +1631,15 @@
       
         <h1 id="青训营-X-码上掘金-攒青豆-Golang"><a href="#青训营-X-码上掘金-攒青豆-Golang" class="headerlink" title="青训营 X 码上掘金 攒青豆 Golang"></a>青训营 X 码上掘金 攒青豆 Golang</h1><p><strong>当青训营遇上码上掘金</strong></p>
 <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>现有 n 个宽度为 1 的柱子，给出 n 个非负整数依次表示柱子的高度，排列后如下图所示，此时均匀从上空向下撒青豆，计算按此排列的柱子能接住多少青豆。（不考虑边角堆积）</p>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/%E6%94%92%E9%9D%92%E8%B1%86.webp" alt="攒青豆.png"></p>
+<p><img src="/bytedance-camp-note-beans/%E6%94%92%E9%9D%92%E8%B1%86.webp" alt="攒青豆.png"></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">以下为上图例子的解析：</span><br><span class="line"></span><br><span class="line">输入：<span class="attribute">height</span> = <span class="selector-attr">[5,0,2,1,4,0,1,0,3]</span>  </span><br><span class="line">输出：<span class="number">17</span>  </span><br><span class="line">解析：上面是由数组 <span class="selector-attr">[5,0,2,1,4,0,1,0,3]</span> 表示的柱子高度，在这种情况下，可以接 <span class="number">17</span> 个单位的青豆。</span><br></pre></td></tr></table></figure>
 
 <h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>本人刷题用c++较多，由于本次青训营学习的语言为Golang，故采用Go来解题。</p>
 <p>题目给出n个柱子及对应的高度，由于柱子高低不同，导致我们难以判断两个柱子之间会积攒多少青豆。但是我们如果将柱子简化到高度只有1，那么可以容易得到积攒的青豆数。</p>
 <p>我们对上图的例子进行分析。得到第一层height1 &#x3D; [1,0,1,1,1,0,1,0,1] ，容易得知第一层青豆数为3</p>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/uTools_1675753557445-300x31.png" alt="uTools_1675753557445.png"></p>
+<p><img src="/bytedance-camp-note-beans/uTools_1675753557445-300x31.png" alt="uTools_1675753557445.png"></p>
 <p>之后剩余部分为 height2 &#x3D; [4,0,1,0,3,0,0,0,2]</p>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/uTools_1675753841021.png" alt="uTools_1675753841021"></p>
+<p><img src="/bytedance-camp-note-beans/uTools_1675753841021.png" alt="uTools_1675753841021"></p>
 <p>如此一来，我们得到了一个新的height2，我们可以通过递归求解，也可以自底向上一层一层求解。我采用了第二种。</p>
 <p>层数</p>
 <p>青豆数</p>
@@ -1519,6 +1676,10 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Golang</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">递归</a>
         		</li>
       		
@@ -1531,17 +1692,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
+        			<a href="/categories/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
 
         		</li>
       		
@@ -1677,17 +1828,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
+        			<a href="/categories/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
 
         		</li>
       		
@@ -1845,7 +1986,51 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JWT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Golang</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目实战</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Gorm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">分布式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">前缀和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">深度图像</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">世界坐标</a>
               </li>
             
             <div class="clearfix"></div>

@@ -170,7 +170,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 考虑一个简单的二分类问题——将二维平面上的点分为A和B两类。 训练数据包含n个点，其中第i个点(1≤i≤n)可以表示为一个三元组(x,y,type),即该点的横坐标、纵坐标和类别。 在二维平面上，任意一条直线可以表示为a+bx+cy&#x3D;0的形式，即由a、b和c三个参数确定该直线，且满足b、c不同时为0。 基于这个已知类别的点，我们想要在平面上找到一条直线作为一个线性分类器。 具体来说，这条线要把训练数据中的A、B两类点完美分隔开来，即一侧只有A类点、另一侧只有B类点。这样，对于任意一个的未知类别的点，我们就可以根据它是位于直线的哪一侧来预测它的类别了。 在本题中我们仅需要处理m个如下查询：给定一条直线，判断它是否能将训练数据中的A、B两类点完美分开。 【输入格式】 从标准输入读入数据。 输入共n+m+1行 第一行包含用空格分隔的两个正整数和m,分别表示点和查询的个数。 第二行到第n+1行依次输入n个点的信息。第i+1行（1≤i≤n)包含用空格 分隔的三项x、y和type,分别表示第i个点的横、纵坐标和类别，其中坐标为整数、类别为一个大写英文字母A或B。 第n+2行到第n+m+1行依次输入m个查询。第j+n+1行(1≤j≤m)包含用空格分隔的三个整数a，b和c，表示第J个查询中给定直线的三个参数。 【输出格式】 输出到标准输出。 输出共m行，每行输出一个字符串. 第j行(1≤j≤m)输出的字符串对应第j个查询的结果：如果给定直线可以完美分隔A、B两类点，则输出Yes:否则输出No。 【样例1输入】</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 考虑一个简单的二分类问题——将二维平面上的点分为A和B两类。 训练数据包含n个点，其中第i个点(1≤i≤n)可以表示为一个三元组(x,y,type),即该点的横坐标、纵坐标和类别。 在二维平面上，任意一条直线可以表示为a+bx+cy&#x3D;0的形式，即由a、b和c三个参数确定该直线，且满足b、c不同时为0。 基于这个已知类别的点，我们想要在平面上找到一条直线作为一个线性分类器。 具体来说，这条线要把训练数据中的A、B两类点完美分隔开来，即一侧只有A类点、另一侧只有B类点。这样，对于任意一个的未知类别的点，我们就可以根据它是位于直线的哪一侧来预测它的类别了。 在本题中我们仅需要处理m个如下查询：给定一条直线，判断它是否能将训练数据中的A、B两类点完美分开。 </p>
+<p>【输入格式】 从标准输入读入数据。 输入共n+m+1行 第一行包含用空格分隔的两个正整数和m,分别表示点和查询的个数。 第二行到第n+1行依次输入n个点的信息。第i+1行（1≤i≤n)包含用空格 分隔的三项x、y和type,分别表示第i个点的横、纵坐标和类别，其中坐标为整数、类别为一个大写英文字母A或B。 第n+2行到第n+m+1行依次输入m个查询。第j+n+1行(1≤j≤m)包含用空格分隔的三个整数a，b和c，表示第J个查询中给定直线的三个参数。 </p>
+<p>【输出格式】 输出到标准输出。 输出共m行，每行输出一个字符串. 第j行(1≤j≤m)输出的字符串对应第j个查询的结果：如果给定直线可以完美分隔A、B两类点，则输出Yes:否则输出No。 </p>
+<p>【样例1输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">9 3</span><br><span class="line">1 1 A</span><br><span class="line">1 0 A</span><br><span class="line">1 -1 A</span><br><span class="line">2 2 B</span><br><span class="line">2 3 B</span><br><span class="line">0 1 A</span><br><span class="line">3 1 B</span><br><span class="line">1 3 B</span><br><span class="line">2 0 A</span><br><span class="line">0 2 -3</span><br><span class="line">-3 0 2</span><br><span class="line">-3 1 1</span><br></pre></td></tr></table></figure>
 
 <p>【样例1输出】</p>
@@ -190,17 +193,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -260,7 +253,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】 开学了，可是校园里堆积了不少垃圾杂物。热心的同学们纷纷自发前来清理，为学校注入正能量~ 【题目描述】 通过无人机航拍我们己经知晓了n处尚待清理的垃圾位置，其中第i(1≤i≤n)处的坐标为(xi，yi),保证所有的坐标均为整数。我们希望在垃圾集中的地方建立些回收站。具体来说，对于一个位置(x,y)是否适合建立回收站，我们主要考虑以下几点： ·(x,y)必须是整数坐标，且该处存在垃圾： ·上下左右四个邻居位置，即(xy+1)、(K,y-1)、(x+1,y)和(x-1,)处，必须全部存在垃圾： ·进一步地，我们会对满足上述两个条件的选址进行评分，分数为不大于4的自然数，表示在(x±1，y±1)四个对角位置中有几处存在垃圾。 现在，请你统计一下每种得分的选址个数。 【输入格式】 从标准输入读入数据。 输入总共有n+1行。 第1行包含一个正整数n,表示己查明的垃圾点个数。 第1+i行(1≤i≤n)包含由一个空格分隔的两个整数：和，表示第i处垃圾的坐标。 保证输入的n个坐标互不相同。 【输出格式】 输出到标准输出。 输出共五行，每行一个整数，依次表示得分为0、1、2、3和4的回收站选址个数。 【样例1输入】</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】 开学了，可是校园里堆积了不少垃圾杂物。热心的同学们纷纷自发前来清理，为学校注入正能量~ </p>
+<p>【题目描述】 通过无人机航拍我们己经知晓了n处尚待清理的垃圾位置，其中第i(1≤i≤n)处的坐标为(xi，yi),保证所有的坐标均为整数。我们希望在垃圾集中的地方建立些回收站。具体来说，对于一个位置(x,y)是否适合建立回收站，我们主要考虑以下几点： ·(x,y)必须是整数坐标，且该处存在垃圾： ·上下左右四个邻居位置，即(xy+1)、(K,y-1)、(x+1,y)和(x-1,)处，必须全部存在垃圾： ·进一步地，我们会对满足上述两个条件的选址进行评分，分数为不大于4的自然数，表示在(x±1，y±1)四个对角位置中有几处存在垃圾。 现在，请你统计一下每种得分的选址个数。 </p>
+<p>【输入格式】 从标准输入读入数据。 输入总共有n+1行。 第1行包含一个正整数n,表示己查明的垃圾点个数。 第1+i行(1≤i≤n)包含由一个空格分隔的两个整数：和，表示第i处垃圾的坐标。 保证输入的n个坐标互不相同。 </p>
+<p>【输出格式】 输出到标准输出。 输出共五行，每行一个整数，依次表示得分为0、1、2、3和4的回收站选址个数。 </p>
+<p>【样例1输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">12</span><br><span class="line">21</span><br><span class="line">00</span><br><span class="line">11</span><br><span class="line">18</span><br><span class="line">20</span><br><span class="line">01</span><br></pre></td></tr></table></figure>
 
 <p>【样例1输出】</p>
@@ -280,17 +277,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -350,7 +337,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 甲乙丙丁决定玩一个报数的游戏来打发时间。游戏规则为四个人从1开始轮流进 行报数，但如果需要报出的数是7的倍数或含有数字7则直接跳过。 此外大家约定，在总共报出了个数后（不计入被跳过的数）游戏结束。现在需要 你来帮忙统计，游戏过程中每个人各自跳过了几次。 【输入格式】 从标准输入读入数据。 输入仅一行，包含一个正整数，表示报出了多少个数后游戏结束。 【输出格式】 输出到标准输出。 输出共四行，每行一个整数，依次表示甲乙丙丁四人在游戏过程中跳过的次数。 【样例1输入】</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 甲乙丙丁决定玩一个报数的游戏来打发时间。游戏规则为四个人从1开始轮流进 行报数，但如果需要报出的数是7的倍数或含有数字7则直接跳过。 此外大家约定，在总共报出了个数后（不计入被跳过的数）游戏结束。现在需要 你来帮忙统计，游戏过程中每个人各自跳过了几次。 </p>
+<p>【输入格式】 从标准输入读入数据。 输入仅一行，包含一个正整数，表示报出了多少个数后游戏结束。 </p>
+<p>【输出格式】 输出到标准输出。 输出共四行，每行一个整数，依次表示甲乙丙丁四人在游戏过程中跳过的次数。 </p>
+<p>【样例1输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20</span><br></pre></td></tr></table></figure>
 
 <p>【样例1输出】</p>
@@ -371,17 +361,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -441,7 +421,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 小明在他的果园里种了一些苹果树，这些苹果树排列成一个圆。为了保证苹果的品质，在种植过程中要进行疏果操作。为了更及时地完成疏果操作，小明会不时地检查每棵树的状态，根据需要进行疏果。检查时，如果发现可能有苹果从树上掉落，小明会重新统计树上的苹果个数（然后根据之前的记录就可以判断是否有苹果掉落了）。在全部操作结束后，请帮助小明统计相关的信息。 【输入格式】 从标准输入读入数据。 第1行包含一个正整数N,表示苹果树的棵数。 第1+i行(1≤i≤N),每行的格式为m,a1,a2,,am。其中，第一个正整数m表示本行后面的整数个数。后续的mi个整数表示小明对第i棵苹果树的操作记录。若(1≤j≤m)为正整数，则表示小明进行了重新统计该棵树上的苹果个数的操作，统计的苹果个数为aij:若为零或负整数，则表示一次疏果操作，去掉的苹果个数是aij。输入保证一定是正确的，满足： 1.a1&gt;0,即对于每棵树的记录，第一个操作一定是统计苹果个数（初始状态，此时不用判断是否有苹果掉落)： 2.每次疏果操作保证操作后树上的苹果个数仍为正。 【输出格式】 输出到标准输出。 输出只有一行，包含三个整数T、D、E。其中， ·T为全部疏果操作结束后所有苹果树上剩下的苹果总数（假设每棵苹果树在最后一次统计苹果个数操作后苹果不会因为疏果以外的原因减少)： ·D为发生苹果掉落的苹果树的棵数： ·E为相邻连续三棵树发生苹果掉落情况的组数。 对于第三个统计量的解释：N棵苹果树A1,A2,,Aw排列成一个圆，那么A1与A2相邻，A2与A3相邻，…，AN-1与Aw相邻，Aw与A1相邻。如果A-1,A,A+1这三棵树都发生了苹果掉落的情况，则记为一组。形式化的，有E&#x3D;(AlDrop(Pred(A))A Drop(A A Drop(Succ(A )))其中，Drop(A)表示苹果树A:是否发生苹果掉落的情况，PrCd(A)表示A:的前一棵树A:-1(如果i&gt;1)或者Aw(如果i&#x3D;1),Succ(A)表示A:的后一棵树A+1(如果i&lt;N)或者A(如果i&#x3D;N)。</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 小明在他的果园里种了一些苹果树，这些苹果树排列成一个圆。为了保证苹果的品质，在种植过程中要进行疏果操作。为了更及时地完成疏果操作，小明会不时地检查每棵树的状态，根据需要进行疏果。检查时，如果发现可能有苹果从树上掉落，小明会重新统计树上的苹果个数（然后根据之前的记录就可以判断是否有苹果掉落了）。在全部操作结束后，请帮助小明统计相关的信息。 </p>
+<p>【输入格式】 从标准输入读入数据。 第1行包含一个正整数N,表示苹果树的棵数。 第1+i行(1≤i≤N),每行的格式为m,a1,a2,,am。其中，第一个正整数m表示本行后面的整数个数。后续的mi个整数表示小明对第i棵苹果树的操作记录。若(1≤j≤m)为正整数，则表示小明进行了重新统计该棵树上的苹果个数的操作，统计的苹果个数为aij:若为零或负整数，则表示一次疏果操作，去掉的苹果个数是aij。输入保证一定是正确的，满足： 1.a1&gt;0,即对于每棵树的记录，第一个操作一定是统计苹果个数（初始状态，此时不用判断是否有苹果掉落)： 2.每次疏果操作保证操作后树上的苹果个数仍为正。 </p>
+<p>【输出格式】 输出到标准输出。 输出只有一行，包含三个整数T、D、E。其中， ·T为全部疏果操作结束后所有苹果树上剩下的苹果总数（假设每棵苹果树在最后一次统计苹果个数操作后苹果不会因为疏果以外的原因减少)： ·D为发生苹果掉落的苹果树的棵数： ·E为相邻连续三棵树发生苹果掉落情况的组数。 对于第三个统计量的解释：N棵苹果树A1,A2,,Aw排列成一个圆，那么A1与A2相邻，A2与A3相邻，…，AN-1与Aw相邻，Aw与A1相邻。如果A-1,A,A+1这三棵树都发生了苹果掉落的情况，则记为一组。形式化的，有E&#x3D;(AlDrop(Pred(A))A Drop(A A Drop(Succ(A )))其中，Drop(A)表示苹果树A:是否发生苹果掉落的情况，PrCd(A)表示A:的前一棵树A:-1(如果i&gt;1)或者Aw(如果i&#x3D;1),Succ(A)表示A:的后一棵树A+1(如果i&lt;N)或者A(如果i&#x3D;N)。</p>
 <p>【样例1输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">4 74 -7 -12 -5</span><br><span class="line">5 73 -8 -6 59 -4</span><br><span class="line">5 76 -5 -10 60 -2</span><br><span class="line">5 80 -6 -15 59 0</span><br></pre></td></tr></table></figure>
 
@@ -463,17 +445,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -533,14 +505,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 小明在他的果园里种了一些苹果树。为了保证苹果的品质，在种植过程中要进行若干轮疏果操作，也就是提前从树上把不好的苹果去掉。第一轮疏果操作开始前，小明记录了每棵树上苹果的个数。每轮疏果操作时，小明都记录了从每棵树上去掉的苹果个数。在最后一轮疏果操作结束后，请帮助小明统计相关的信息。 【输入格式】 从标准输入读入数据。 第1行包含两个正整数N和M,分别表示苹果树的棵数和疏果操作的轮数。 第1+i行(1≤i≤N),每行包含M+1个整数a0,a1,,aM。其中a0为正整 数，表示第一轮疏果操作开始前第i棵树上苹果的个数。a(1≤j≤M)为零或负整数，表示第j轮疏果操作时从第i棵树上去掉的苹果个数。如果为零，表示没有去掉苹果：如果为负，其绝对值为去掉的苹果个数。每行中相邻两个数之间用一个空格分隔。 【输出格式】 输出到标准输出。 输出只有一行，包含三个整数T、k和P。其中， T为最后一轮疏果操作后所有苹果树上剩下的苹果总数（假设苹果不会因为其他原因减少)： k为疏果个数（也就是疏果操作去掉的苹果个数）最多的苹果树编号（如有并列，输出满足条件的最小编号)： P为该苹果树的疏果个数。 相邻两个数之间用一个空格分隔。输入数据保证是正确的，也就是说，每棵树在全部疏果操作结束后剩下的苹果个数是非负的。 【样例1输入】</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">33</span><br><span class="line">73 -8 -6 -4</span><br><span class="line">76 -5 -10 -8</span><br><span class="line">80 -6 -15 0</span><br></pre></td></tr></table></figure>
-
-<p>【样例1输出】</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">167 2 23</span><br></pre></td></tr></table></figure>
-
-<p>【样例1解释】 第1棵苹果树的疏果个数为8+6+4&#x3D;18，第2棵为5+10+8&#x3D;23，第3 棵为6+15+0&#x3D;21，因此最后一轮疏果操作后全部苹果树上的苹果个数总和为 (73-18)+(76-23)+(80-21)&#x3D;167,疏果个数最多的是第2棵数，其疏果个数为23。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e3</span>+<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n,m;</span><br><span class="line">    <span class="type">int</span> a[N][<span class="number">2</span>];</span><br><span class="line">    <span class="type">int</span> total=<span class="number">0</span>,maxa=<span class="number">0</span>,maxindex=<span class="number">0</span>;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> b,sum=<span class="number">0</span>;</span><br><span class="line">        cin&gt;&gt;a[i][<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;m;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            cin&gt;&gt;b;</span><br><span class="line">            sum+=b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(sum&lt;maxa)</span><br><span class="line">        &#123;</span><br><span class="line">            maxindex=i;</span><br><span class="line">            maxa=sum;</span><br><span class="line">        &#125;</span><br><span class="line">        a[i][<span class="number">1</span>]=sum;</span><br><span class="line">        total+=a[i][<span class="number">0</span>]+a[i][<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;total&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;maxindex+<span class="number">1</span>&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;-a[maxindex][<span class="number">1</span>]&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
       
 
       
@@ -554,17 +519,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -624,7 +579,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】 在数据分析中，最小值最大值以及中位数是常用的统计信息。 【题目描述】 老师给了你个整数组成的测量数据，保证有序（可能为升序或降序），可能存在重复的数据。请统计出这组测量数据中的最大值、中位数以及最小值，并按照从大到小的顺序输出这三个数 【输入格式】 从标准输入读入数据。第一行输入一个整数，在第二行中存在n个有序的整数，表示测量数据，可能为升序或降序排列，可能存在连续多个整数相等，整数与整数之间使用空格隔开。 【输出格式】 输出到标准输出。包含一行，包括最大值、中位数以及最小值共三个数，并按照从大到小的顺序输出。数据与数据之间使用空格隔开。对于整数请直接输出整数，对于可能出现的分数，请输出四舍五入保留1位小数的结果。 【样例1输入】</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】 在数据分析中，最小值最大值以及中位数是常用的统计信息。 </p>
+<p>【题目描述】 老师给了你个整数组成的测量数据，保证有序（可能为升序或降序），可能存在重复的数据。请统计出这组测量数据中的最大值、中位数以及最小值，并按照从大到小的顺序输出这三个数 </p>
+<p>【输入格式】 从标准输入读入数据。第一行输入一个整数，在第二行中存在n个有序的整数，表示测量数据，可能为升序或降序排列，可能存在连续多个整数相等，整数与整数之间使用空格隔开。 </p>
+<p>【输出格式】 输出到标准输出。包含一行，包括最大值、中位数以及最小值共三个数，并按照从大到小的顺序输出。数据与数据之间使用空格隔开。对于整数请直接输出整数，对于可能出现的分数，请输出四舍五入保留1位小数的结果。</p>
+<p>【样例1输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">-1 2 4</span><br></pre></td></tr></table></figure>
 
 <p>【样例1输出】</p>
@@ -645,17 +604,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -715,13 +664,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】 　　小明是汉东省政法大学附属中学的一名学生，他每天都要骑自行车往返于家和学校。为了能尽可能充足地睡眠，他希望能够预计自己上学所需要的时间。他上学需要经过数段道路，相邻两段道路之间设有至多一盏红绿灯。 　　京州市的红绿灯是这样工作的：每盏红绿灯有红、黄、绿三盏灯和一个能够显示倒计时的显示牌。假设红绿灯被设定为红灯 r 秒，黄灯 y 秒，绿灯 g 秒，那么从 0 时刻起，[0,r) 秒内亮红灯，车辆不许通过；[r, r+g) 秒内亮绿灯，车辆允许通过；[r+g, r+g+y) 秒内亮黄灯，车辆不许通过，然后依次循环。倒计时的显示牌上显示的数字 l（l &gt; 0）是指距离下一次信号灯变化的秒数。 【问题描述】 　　一次上学的路上，小明记录下了经过每段路的时间，和各个红绿灯在小明到达路口时的颜色和倒计时秒数。希望你帮忙计算此次小明上学所用的时间。 【输入格式】 　　输入的第一行包含空格分隔的三个正整数 r、y、g，表示红绿灯的设置。这三个数均不超过 106。 　　输入的第二行包含一个正整数 n（n ≤ 100），表示小明总共经过的道路段数和看到的红绿灯数目。 　　接下来的 n 行，每行包含空格分隔的两个整数 k、t。k&#x3D;0 表示经过了一段道路，耗时 t 秒，此处 t 不超过 106；k&#x3D;1、2、3 时，分别表示看到了一个红灯、黄灯、绿灯，且倒计时显示牌上显示的数字是 t，此处 t 分别不会超过 r、y、g。 【输出格式】 　　输出一个数字，表示此次小明上学所用的时间。 【样例输入】</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】小明是汉东省政法大学附属中学的一名学生，他每天都要骑自行车往返于家和学校。为了能尽可能充足地睡眠，他希望能够预计自己上学所需要的时间。他上学需要经过数段道路，相邻两段道路之间设有至多一盏红绿灯。京州市的红绿灯是这样工作的：每盏红绿灯有红、黄、绿三盏灯和一个能够显示倒计时的显示牌。假设红绿灯被设定为红灯 r 秒，黄灯 y 秒，绿灯 g 秒，那么从 0 时刻起，[0,r) 秒内亮红灯，车辆不许通过；[r, r+g) 秒内亮绿灯，车辆允许通过；[r+g, r+g+y) 秒内亮黄灯，车辆不许通过，然后依次循环。倒计时的显示牌上显示的数字 l（l &gt; 0）是指距离下一次信号灯变化的秒数。 </p>
+<p>【问题描述】一次上学的路上，小明记录下了经过每段路的时间，和各个红绿灯在小明到达路口时的颜色和倒计时秒数。希望你帮忙计算此次小明上学所用的时间。 </p>
+<p>【输入格式】输入的第一行包含空格分隔的三个正整数 r、y、g，表示红绿灯的设置。这三个数均不超过 106。输入的第二行包含一个正整数 n（n ≤ 100），表示小明总共经过的道路段数和看到的红绿灯数目。接下来的 n 行，每行包含空格分隔的两个整数 k、t。k&#x3D;0 表示经过了一段道路，耗时 t 秒，此处 t 不超过 106；k&#x3D;1、2、3 时，分别表示看到了一个红灯、黄灯、绿灯，且倒计时显示牌上显示的数字是 t，此处 t 分别不会超过 r、y、g。</p>
+<p>【输出格式】输出一个数字，表示此次小明上学所用的时间。 </p>
+<p>【样例输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">30 3 30</span><br><span class="line">8</span><br><span class="line">0 10</span><br><span class="line">1 5</span><br><span class="line">0 11</span><br><span class="line">2 2</span><br><span class="line">0 6</span><br><span class="line">0 3</span><br><span class="line">3 10</span><br><span class="line">0 3</span><br></pre></td></tr></table></figure>
 
 <p>【样例输出】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">70</span><br></pre></td></tr></table></figure>
 
-<p>【样例说明】 　　小明先经过第一段道路，用时 10 秒，然后等待 5 秒的红灯，再经过第二段道路，用时 11 秒，然后等待 2 秒的黄灯和 30 秒的红灯，再经过第三段、第四段道路，分别用时6、3秒，然后通过绿灯，再经过最后一段道路，用时 3 秒。共计 10 + 5 + 11 + 2 + 30 + 6 + 3 + 3&#x3D;70 秒。</p>
+<p>【样例说明】小明先经过第一段道路，用时 10 秒，然后等待 5 秒的红灯，再经过第二段道路，用时 11 秒，然后等待 2 秒的黄灯和 30 秒的红灯，再经过第三段、第四段道路，分别用时6、3秒，然后通过绿灯，再经过最后一段道路，用时 3 秒。共计 10 + 5 + 11 + 2 + 30 + 6 + 3 + 3&#x3D;70 秒。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> r,y,g,n;</span><br><span class="line">    <span class="type">int</span> k,t,sum=<span class="number">0</span>;</span><br><span class="line">    cin&gt;&gt;r&gt;&gt;y&gt;&gt;g;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;k&gt;&gt;t;</span><br><span class="line">        <span class="keyword">if</span>(k==<span class="number">0</span>)</span><br><span class="line">            sum+=t;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(k==<span class="number">1</span>)</span><br><span class="line">            sum+=t;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(k==<span class="number">2</span>)</span><br><span class="line">            sum=sum+r+t;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;sum;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
@@ -736,17 +689,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -806,7 +749,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】 　　汉东省政法大学附属中学所在的光明区最近实施了名为“智慧光明”的智慧城市项目。具体到交通领域，通过“智慧光明”终端，可以看到光明区所有红绿灯此时此刻的状态。小明的学校也安装了“智慧光明”终端，小明想利用这个终端给出的信息，估算自己放学回到家的时间。 【问题描述】 　　一次放学的时候，小明已经规划好了自己回家的路线，并且能够预测经过各个路段的时间。同时，小明通过学校里安装的“智慧光明”终端，看到了出发时刻路上经过的所有红绿灯的指示状态。请帮忙计算小明此次回家所需要的时间。 【输入格式】 　　输入的第一行包含空格分隔的三个正整数 r、y、g，表示红绿灯的设置。这三个数均不超过 106。 　　输入的第二行包含一个正整数 n，表示小明总共经过的道路段数和路过的红绿灯数目。 　　接下来的 n 行，每行包含空格分隔的两个整数 k、t。k&#x3D;0 表示经过了一段道路，将会耗时 t 秒，此处 t 不超过 106；k&#x3D;1、2、3 时，分别表示出发时刻，此处的红绿灯状态是红灯、黄灯、绿灯，且倒计时显示牌上显示的数字是 t，此处 t 分别不会超过 r、y、g。 【输出格式】 　　输出一个数字，表示此次小明放学回家所用的时间。 【样例输入】</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目背景】汉东省政法大学附属中学所在的光明区最近实施了名为“智慧光明”的智慧城市项目。具体到交通领域，通过“智慧光明”终端，可以看到光明区所有红绿灯此时此刻的状态。小明的学校也安装了“智慧光明”终端，小明想利用这个终端给出的信息，估算自己放学回到家的时间。 </p>
+<p>【问题描述】一次放学的时候，小明已经规划好了自己回家的路线，并且能够预测经过各个路段的时间。同时，小明通过学校里安装的“智慧光明”终端，看到了出发时刻路上经过的所有红绿灯的指示状态。请帮忙计算小明此次回家所需要的时间。 </p>
+<p>【输入格式】输入的第一行包含空格分隔的三个正整数 r、y、g，表示红绿灯的设置。这三个数均不超过 106。输入的第二行包含一个正整数 n，表示小明总共经过的道路段数和路过的红绿灯数目。接下来的 n 行，每行包含空格分隔的两个整数 k、t。k&#x3D;0 表示经过了一段道路，将会耗时 t 秒，此处 t 不超过 106；k&#x3D;1、2、3 时，分别表示出发时刻，此处的红绿灯状态是红灯、黄灯、绿灯，且倒计时显示牌上显示的数字是 t，此处 t 分别不会超过 r、y、g。 </p>
+<p>【输出格式】输出一个数字，表示此次小明放学回家所用的时间。 </p>
+<p>【样例输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">30 3 30</span><br><span class="line">8</span><br><span class="line">0 10</span><br><span class="line">1 5</span><br><span class="line">0 11</span><br><span class="line">2 2</span><br><span class="line">0 6</span><br><span class="line">0 3</span><br><span class="line">3 10</span><br><span class="line">0 3</span><br></pre></td></tr></table></figure>
 
 <p>【样例输出】</p>
@@ -827,17 +774,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -897,7 +834,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【问题描述】 　　数轴上有一条长度为L（L为偶数)的线段，左端点在原点，右端点在坐标L处。有n个不计体积的小球在线段上，开始时所有的小球都处在偶数坐标上，速度方向向右，速度大小为1单位长度每秒。 　　当小球到达线段的端点（左端点或右端点）的时候，会立即向相反的方向移动，速度大小仍然为原来大小。 　　当两个小球撞到一起的时候，两个小球会分别向与自己原来移动的方向相反的方向，以原来的速度大小继续移动。 　　现在，告诉你线段的长度L，小球数量n，以及n个小球的初始位置，请你计算t秒之后，各个小球的位置。 提示 　　因为所有小球的初始位置都为偶数，而且线段的长度为偶数，可以证明，不会有三个小球同时相撞，小球到达线段端点以及小球之间的碰撞时刻均为整数。 　　同时也可以证明两个小球发生碰撞的位置一定是整数（但不一定是偶数）。 【输入格式】 　　输入的第一行包含三个整数n, L, t，用空格分隔，分别表示小球的个数、线段长度和你需要计算t秒之后小球的位置。 　　第二行包含n个整数a1, a2, …, an，用空格分隔，表示初始时刻n个小球的位置。 【输出格式】 　　输出一行包含n个整数，用空格分隔，第i个整数代表初始时刻位于ai的小球，在t秒之后的位置。 【样例输入】</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【问题描述】数轴上有一条长度为L（L为偶数)的线段，左端点在原点，右端点在坐标L处。有n个不计体积的小球在线段上，开始时所有的小球都处在偶数坐标上，速度方向向右，速度大小为1单位长度每秒。当小球到达线段的端点（左端点或右端点）的时候，会立即向相反的方向移动，速度大小仍然为原来大小。当两个小球撞到一起的时候，两个小球会分别向与自己原来移动的方向相反的方向，以原来的速度大小继续移动。现在，告诉你线段的长度L，小球数量n，以及n个小球的初始位置，请你计算t秒之后，各个小球的位置。<br>提示：因为所有小球的初始位置都为偶数，而且线段的长度为偶数，可以证明，不会有三个小球同时相撞，小球到达线段端点以及小球之间的碰撞时刻均为整数。同时也可以证明两个小球发生碰撞的位置一定是整数（但不一定是偶数）。 </p>
+<p>【输入格式】输入的第一行包含三个整数n, L, t，用空格分隔，分别表示小球的个数、线段长度和你需要计算t秒之后小球的位置。第二行包含n个整数a1, a2, …, an，用空格分隔，表示初始时刻n个小球的位置。 </p>
+<p>【输出格式】输出一行包含n个整数，用空格分隔，第i个整数代表初始时刻位于ai的小球，在t秒之后的位置。 </p>
+<p>【样例输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3 10 5</span><br><span class="line">4 6 8</span><br></pre></td></tr></table></figure>
 
 <p>【样例输出】</p>
@@ -917,17 +857,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -987,13 +917,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【问题描述】 　　近来，跳一跳这款小游戏风靡全国，受到不少玩家的喜爱。 　　简化后的跳一跳规则如下：玩家每次从当前方块跳到下一个方块，如果没有跳到下一个方块上则游戏结束。 　　如果跳到了方块上，但没有跳到方块的中心则获得1分；跳到方块中心时，若上一次的得分为1分或这是本局游戏的第一次跳跃则此次得分为2分，否则此次得分比上一次得分多两分（即连续跳到方块中心时，总得分将+2，+4，+6，+8…）。 　　现在给出一个人跳一跳的全过程，请你求出他本局游戏的得分（按照题目描述的规则）。 【输入格式】 　　输入包含多个数字，用空格分隔，每个数字都是1，2，0之一，1表示此次跳跃跳到了方块上但是没有跳到中心，2表示此次跳跃跳到了方块上并且跳到了方块中心，0表示此次跳跃没有跳到方块上（此时游戏结束）。 【输出格式】 　　输出一个整数，为本局游戏的得分（在本题的规则下）。 【样例输入】</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【问题描述】近来，跳一跳这款小游戏风靡全国，受到不少玩家的喜爱。简化后的跳一跳规则如下：玩家每次从当前方块跳到下一个方块，如果没有跳到下一个方块上则游戏结束。如果跳到了方块上，但没有跳到方块的中心则获得1分；跳到方块中心时，若上一次的得分为1分或这是本局游戏的第一次跳跃则此次得分为2分，否则此次得分比上一次得分多两分（即连续跳到方块中心时，总得分将+2，+4，+6，+8…）。现在给出一个人跳一跳的全过程，请你求出他本局游戏的得分（按照题目描述的规则）。 </p>
+<p>【输入格式】输入包含多个数字，用空格分隔，每个数字都是1，2，0之一，1表示此次跳跃跳到了方块上但是没有跳到中心，2表示此次跳跃跳到了方块上并且跳到了方块中心，0表示此次跳跃没有跳到方块上（此时游戏结束）。 </p>
+<p>【输出格式】输出一个整数，为本局游戏的得分（在本题的规则下）。 </p>
+<p>【样例输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 1 2 2 2 1 1 2 2 0</span><br></pre></td></tr></table></figure>
 
 <p>【样例输出】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">22</span><br></pre></td></tr></table></figure>
 
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> score=<span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> total=<span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt;x)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(x==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(x==<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            score=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(total==<span class="number">0</span>score==<span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                score=<span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                score+=<span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        total+=score;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;total&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> score=<span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> total=<span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt;x)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(x==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(x==<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            score=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(total==<span class="number">0</span>||score==<span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                score=<span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                score+=<span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        total+=score;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;total&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -1007,17 +940,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -1175,7 +1098,51 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JWT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Golang</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目实战</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Gorm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">分布式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">前缀和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">深度图像</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">世界坐标</a>
               </li>
             
             <div class="clearfix"></div>

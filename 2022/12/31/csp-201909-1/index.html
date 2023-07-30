@@ -8,15 +8,13 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>CSP 201909-1小明种苹果 C++ 100 | KK Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目【题目描述】 小明在他的果园里种了一些苹果树。为了保证苹果的品质，在种植过程中要进行若干轮疏果操作，也就是提前从树上把不好的苹果去掉。第一轮疏果操作开始前，小明记录了每棵树上苹果的个数。每轮疏果操作时，小明都记录了从每棵树上去掉的苹果个数。在最后一轮疏果操作结束后，请帮助小明统计相关的信息。 【输入格式】 从标准输入读入数据。 第1行包含两个正整数N和M,分别表示苹果树的棵数和疏果操作的轮数。">
-<meta property="og:type" content="article">
+  <meta property="og:type" content="article">
 <meta property="og:title" content="CSP 201909-1小明种苹果 C++ 100">
 <meta property="og:url" content="http://example.com/2022/12/31/csp-201909-1/index.html">
 <meta property="og:site_name" content="KK Blog">
-<meta property="og:description" content="题目【题目描述】 小明在他的果园里种了一些苹果树。为了保证苹果的品质，在种植过程中要进行若干轮疏果操作，也就是提前从树上把不好的苹果去掉。第一轮疏果操作开始前，小明记录了每棵树上苹果的个数。每轮疏果操作时，小明都记录了从每棵树上去掉的苹果个数。在最后一轮疏果操作结束后，请帮助小明统计相关的信息。 【输入格式】 从标准输入读入数据。 第1行包含两个正整数N和M,分别表示苹果树的棵数和疏果操作的轮数。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-12-31T09:14:26.000Z">
-<meta property="article:modified_time" content="2023-07-29T04:11:42.608Z">
+<meta property="article:modified_time" content="2023-07-30T09:22:04.725Z">
 <meta property="article:author" content="KK">
 <meta name="twitter:card" content="summary">
   
@@ -172,14 +170,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 小明在他的果园里种了一些苹果树。为了保证苹果的品质，在种植过程中要进行若干轮疏果操作，也就是提前从树上把不好的苹果去掉。第一轮疏果操作开始前，小明记录了每棵树上苹果的个数。每轮疏果操作时，小明都记录了从每棵树上去掉的苹果个数。在最后一轮疏果操作结束后，请帮助小明统计相关的信息。 【输入格式】 从标准输入读入数据。 第1行包含两个正整数N和M,分别表示苹果树的棵数和疏果操作的轮数。 第1+i行(1≤i≤N),每行包含M+1个整数a0,a1,,aM。其中a0为正整 数，表示第一轮疏果操作开始前第i棵树上苹果的个数。a(1≤j≤M)为零或负整数，表示第j轮疏果操作时从第i棵树上去掉的苹果个数。如果为零，表示没有去掉苹果：如果为负，其绝对值为去掉的苹果个数。每行中相邻两个数之间用一个空格分隔。 【输出格式】 输出到标准输出。 输出只有一行，包含三个整数T、k和P。其中， T为最后一轮疏果操作后所有苹果树上剩下的苹果总数（假设苹果不会因为其他原因减少)： k为疏果个数（也就是疏果操作去掉的苹果个数）最多的苹果树编号（如有并列，输出满足条件的最小编号)： P为该苹果树的疏果个数。 相邻两个数之间用一个空格分隔。输入数据保证是正确的，也就是说，每棵树在全部疏果操作结束后剩下的苹果个数是非负的。 【样例1输入】</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">33</span><br><span class="line">73 -8 -6 -4</span><br><span class="line">76 -5 -10 -8</span><br><span class="line">80 -6 -15 0</span><br></pre></td></tr></table></figure>
-
-<p>【样例1输出】</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">167 2 23</span><br></pre></td></tr></table></figure>
-
-<p>【样例1解释】 第1棵苹果树的疏果个数为8+6+4&#x3D;18，第2棵为5+10+8&#x3D;23，第3 棵为6+15+0&#x3D;21，因此最后一轮疏果操作后全部苹果树上的苹果个数总和为 (73-18)+(76-23)+(80-21)&#x3D;167,疏果个数最多的是第2棵数，其疏果个数为23。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e3</span>+<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n,m;</span><br><span class="line">    <span class="type">int</span> a[N][<span class="number">2</span>];</span><br><span class="line">    <span class="type">int</span> total=<span class="number">0</span>,maxa=<span class="number">0</span>,maxindex=<span class="number">0</span>;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> b,sum=<span class="number">0</span>;</span><br><span class="line">        cin&gt;&gt;a[i][<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;m;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            cin&gt;&gt;b;</span><br><span class="line">            sum+=b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(sum&lt;maxa)</span><br><span class="line">        &#123;</span><br><span class="line">            maxindex=i;</span><br><span class="line">            maxa=sum;</span><br><span class="line">        &#125;</span><br><span class="line">        a[i][<span class="number">1</span>]=sum;</span><br><span class="line">        total+=a[i][<span class="number">0</span>]+a[i][<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;total&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;maxindex+<span class="number">1</span>&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;-a[maxindex][<span class="number">1</span>]&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
       
 
       
@@ -193,17 +184,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -260,7 +241,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -411,7 +392,51 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JWT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Golang</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目实战</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Gorm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">分布式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">前缀和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">深度图像</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">世界坐标</a>
               </li>
             
             <div class="clearfix"></div>

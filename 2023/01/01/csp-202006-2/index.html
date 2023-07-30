@@ -16,7 +16,7 @@
 <meta property="og:description" content="题目【题目描述】 对于一个n维整数向量v∈Z”，其在第index个维度上的取值记作Vindex。这里我们约定index的取值从1开始，即v&#x3D;(v1,v2…,vn)。下面介绍一种向量的稀疏表示方法。 如果v仅在少量维度上的取值不为0，则称其为稀疏向量。 例如当&#x3D;10时，v&#x3D;(0,0,0,5,0,0,-3,0,0,1)就是一个稀疏向量。 由于稀疏向量的非零值较少，我们可以">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-01T03:17:02.000Z">
-<meta property="article:modified_time" content="2023-07-29T04:11:42.639Z">
+<meta property="article:modified_time" content="2023-07-30T06:01:41.147Z">
 <meta property="article:author" content="KK">
 <meta name="twitter:card" content="summary">
   
@@ -172,7 +172,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 对于一个n维整数向量v∈Z”，其在第index个维度上的取值记作Vindex。这里我们约定index的取值从1开始，即v&#x3D;(v1,v2…,vn)。下面介绍一种向量的稀疏表示方法。 如果v仅在少量维度上的取值不为0，则称其为稀疏向量。 例如当&#x3D;10时，v&#x3D;(0,0,0,5,0,0,-3,0,0,1)就是一个稀疏向量。 由于稀疏向量的非零值较少，我们可以通过仅存储非零值的方式来节省空间。具体来说，每个非零值都可以用一个(index,value)对来表示，即该向量在第index个维度上的取值Vindex&#x3D;value。在上面的例子中，v就可以表示为[(4,5)，(7，-3)，(10,1)]。 接下来给出这种稀疏表示一般化的定义。 ·对于任意一个n维整数向量v∈Z”，如果其在且仅在a个维度上取值不为0，则 可以唯一表示为：[(index1,valve1),(index2,valve2),···(indexa,valuea)] ·其中所有的index均为整数且满足： 1≤index1&lt;indew2&lt;···&lt;indexa≤n ·valuei:表示问量v在对应维度indexi上的非零值。 给出两个n维整数问量u,v∈Z”的稀疏表示，试计算它们的内积。 【输入格式】 从标准输入读入数据。 输入的第一行包含用空格分隔的三个正整数n、a和b，其中n表示向量u、v的 维数，a和b分别表示两个向量所含非零值的个数。 第二行到第a+1行输入向量的稀疏表示。第i+1行(1≤i≤a)包含用空格 分隔的两个整数indexi和valuei,表示Vindexj&#x3D;valuej 第a+2行到第a+b+1行输入向量v的稀疏表示。第j+a+1行(1≤j≤b) 包含用空格分隔的两个整数indexj;和valuej,表示Vindexj&#x3D;valuej 【输出格式】 输出到标准输出。 输出一个整数，表示向量u和v的内积u·v。 【样例输入】</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>【题目描述】 对于一个n维整数向量v∈Z”，其在第index个维度上的取值记作Vindex。这里我们约定index的取值从1开始，即v&#x3D;(v1,v2…,vn)。下面介绍一种向量的稀疏表示方法。 如果v仅在少量维度上的取值不为0，则称其为稀疏向量。 例如当&#x3D;10时，v&#x3D;(0,0,0,5,0,0,-3,0,0,1)就是一个稀疏向量。 由于稀疏向量的非零值较少，我们可以通过仅存储非零值的方式来节省空间。具体来说，每个非零值都可以用一个(index,value)对来表示，即该向量在第index个维度上的取值Vindex&#x3D;value。在上面的例子中，v就可以表示为[(4,5)，(7，-3)，(10,1)]。 接下来给出这种稀疏表示一般化的定义。 ·对于任意一个n维整数向量v∈Z”，如果其在且仅在a个维度上取值不为0，则 可以唯一表示为：[(index1,valve1),(index2,valve2),···(indexa,valuea)] ·其中所有的index均为整数且满足： 1≤index1&lt;indew2&lt;···&lt;indexa≤n ·valuei:表示问量v在对应维度indexi上的非零值。 给出两个n维整数问量u,v∈Z”的稀疏表示，试计算它们的内积。 </p>
+<p>【输入格式】 从标准输入读入数据。 输入的第一行包含用空格分隔的三个正整数n、a和b，其中n表示向量u、v的 维数，a和b分别表示两个向量所含非零值的个数。 第二行到第a+1行输入向量的稀疏表示。第i+1行(1≤i≤a)包含用空格 分隔的两个整数indexi和valuei,表示Vindexj&#x3D;valuej 第a+2行到第a+b+1行输入向量v的稀疏表示。第j+a+1行(1≤j≤b) 包含用空格分隔的两个整数indexj;和valuej,表示Vindexj&#x3D;valuej </p>
+<p>【输出格式】 输出到标准输出。 输出一个整数，表示向量u和v的内积u·v。 </p>
+<p>【样例输入】</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">10 3 4</span><br><span class="line">4 5</span><br><span class="line">7 -3</span><br><span class="line">10 1</span><br><span class="line">1 10</span><br><span class="line">4 20</span><br><span class="line">5 30</span><br><span class="line">7 40</span><br></pre></td></tr></table></figure>
 
 <p>【样例输出】</p>
@@ -192,17 +195,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
+        			<a href="/categories/CSP刷题/" class="article-tag-list-link color1">CSP刷题</a>
 
         		</li>
       		
@@ -410,7 +403,51 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JWT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Golang</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目实战</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Gorm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">分布式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">前缀和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">深度图像</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">世界坐标</a>
               </li>
             
             <div class="clearfix"></div>

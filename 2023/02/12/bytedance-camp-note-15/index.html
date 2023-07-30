@@ -15,19 +15,19 @@
 <meta property="og:site_name" content="KK Blog">
 <meta property="og:description" content="消息队列消息队列中间件是分布式系统中重要的组件，主要解决应用解耦，异步消息，流量削锋等问题，实现高性能，高可用，可伸缩和最终一致性架构。目前使用较多的消息队列有ActiveMQ，RabbitMQ，ZeroMQ，Kafka，MetaMQ，RocketMQ 消息队列是什么 解耦   订单系统：用户下单后，订单系统完成持久化处理，将消息写入消息队列，返回用户订单下单成功 库存系统：订阅下单的消息，采用拉">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.kkkode.top/wp-content/uploads/2023/02/c5be8cc7291f46598766c8f510426ac3.png">
-<meta property="og:image" content="https://www.kkkode.top/wp-content/uploads/2023/02/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MjYyMjIwMA==,size_16,color_FFFFFF,t_70.png">
-<meta property="og:image" content="https://www.kkkode.top/wp-content/uploads/2023/02/ed51387339de4828a73cd377e43f1130.png">
-<meta property="og:image" content="https://www.kkkode.top/wp-content/uploads/2023/02/6d12fff7fde5429b814f15c64fc4a261tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp">
-<meta property="og:image" content="https://www.kkkode.top/wp-content/uploads/2023/02/7ffa6428b4214c6590a3b8a6fc106390tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp">
-<meta property="og:image" content="https://www.kkkode.top/wp-content/uploads/2023/02/228aa11d265240c3aad35736194de94ftplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp">
-<meta property="og:image" content="https://www.kkkode.top/wp-content/uploads/2023/02/ae3b22f299dc4e4a8df34793263055cbtplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp">
-<meta property="og:image" content="https://www.kkkode.top/wp-content/uploads/2023/02/c4e3c7f3fb234b6f9f1102fca16818ddtplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp">
+<meta property="og:image" content="http://example.com/bytedance-camp-note-15/c5be8cc7291f46598766c8f510426ac3.png">
+<meta property="og:image" content="http://example.com/bytedance-camp-note-15/watermark,type_ZmFuZ3poZW5naGVpdGk.png">
+<meta property="og:image" content="http://example.com/bytedance-camp-note-15/ed51387339de4828a73cd377e43f1130.png">
+<meta property="og:image" content="http://example.com/bytedance-camp-note-15/6d12fff7fde5429b814f15c64fc4a261tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp">
+<meta property="og:image" content="http://example.com/bytedance-camp-note-15/7ffa6428b4214c6590a3b8a6fc106390tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp">
+<meta property="og:image" content="http://example.com/bytedance-camp-note-15/228aa11d265240c3aad35736194de94ftplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp">
+<meta property="og:image" content="http://example.com/bytedance-camp-note-15/ae3b22f299dc4e4a8df34793263055cbtplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp">
+<meta property="og:image" content="http://example.com/bytedance-camp-note-15/c4e3c7f3fb234b6f9f1102fca16818ddtplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp">
 <meta property="article:published_time" content="2023-02-12T06:54:03.000Z">
-<meta property="article:modified_time" content="2023-07-29T04:11:42.983Z">
+<meta property="article:modified_time" content="2023-07-30T08:51:50.212Z">
 <meta property="article:author" content="KK">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.kkkode.top/wp-content/uploads/2023/02/c5be8cc7291f46598766c8f510426ac3.png">
+<meta name="twitter:image" content="http://example.com/bytedance-camp-note-15/c5be8cc7291f46598766c8f510426ac3.png">
   
     <link rel="alternative" href="/atom.xml" title="KK Blog" type="application/atom+xml">
   
@@ -185,7 +185,7 @@
 <h3 id="消息队列是什么"><a href="#消息队列是什么" class="headerlink" title="消息队列是什么"></a>消息队列是什么</h3><ul>
 <li>解耦</li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/c5be8cc7291f46598766c8f510426ac3.png" alt="解耦"></p>
+<p><img src="/bytedance-camp-note-15/c5be8cc7291f46598766c8f510426ac3.png" alt="解耦"></p>
 <p>订单系统：用户下单后，订单系统完成持久化处理，将消息写入消息队列，返回用户订单下单成功</p>
 <p>库存系统：订阅下单的消息，采用拉&#x2F;推的方式，获取下单信息，库存系统根据下单信息，进行库存操作</p>
 <p>假如：在下单时库存系统不能正常使用。也不影响正常下单，因为下单后，订单系统写入消息队列就不再关心其他的后续操作了。实现订单系统与库存系统的应用解耦</p>
@@ -201,12 +201,14 @@
 <ul>
 <li>异步</li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MjYyMjIwMA==,size_16,color_FFFFFF,t_70.png" alt="异步"></p>
+<p><img src="/bytedance-camp-note-15/watermark,type_ZmFuZ3poZW5naGVpdGk.png" alt="watermark,type_ZmFuZ3poZW5naGVpdGk"></p>
 <p>按照以上约定，用户的响应时间相当于是注册信息写入数据库的时间，也就是50毫秒。注册邮件，发送短信写入消息队列后，直接返回，因此写入消息队列的速度很快，基本可以忽略，因此用户的响应时间可能是50毫秒。因此架构改变后，系统的吞吐量提高到每秒20 QPS。比串行提高了3倍，比并行提高了两倍。</p>
 <ul>
 <li>日志处理</li>
 </ul>
-<p>日志处理是指将消息队列用在日志处理中，比如<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Kafka&spm=1001.2101.3001.7020">Kafka</a>的应用，解决大量日志传输的问题。架构简化如下 <img src="https://www.kkkode.top/wp-content/uploads/2023/02/ed51387339de4828a73cd377e43f1130.png" alt="日志处理"> 日志采集客户端，负责日志数据采集，定时写受写入Kafka队列</p>
+<p>日志处理是指将消息队列用在日志处理中，比如<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Kafka&spm=1001.2101.3001.7020">Kafka</a>的应用，解决大量日志传输的问题。架构简化如下</p>
+<p> <img src="/bytedance-camp-note-15/ed51387339de4828a73cd377e43f1130.png" alt="日志处理"> </p>
+<p>日志采集客户端，负责日志数据采集，定时写受写入Kafka队列</p>
 <p>Kafka消息队列，负责日志数据的接收，存储和转发</p>
 <p>日志处理应用：订阅并消费kafka队列中的日志数据</p>
 <h3 id="消息队列的前世今生"><a href="#消息队列的前世今生" class="headerlink" title="消息队列的前世今生"></a>消息队列的前世今生</h3><h4 id="消息队列-Kafka"><a href="#消息队列-Kafka" class="headerlink" title="消息队列-Kafka"></a>消息队列-Kafka</h4><p>kafka使用场景，业务日志、用户行为数据、Metrics数据</p>
@@ -227,7 +229,7 @@
 <li>Selector&#x2F;Processor：存在于RPC服务端，由于服务器端某一个RPC接口的实现的特性（它并不知道自己是一个将要被RPC提供给第三方系统调用的服务）。所以在RPC框架中应该有一种“负责执行RPC接口实现”的角色。它负责了包括：管理RPC接口的注册、判断客户端的请求权限、控制接口实现类的执行在内的各种工作。</li>
 <li>IDL：实际上IDL（接口定义语言）并不是RPC实现中所必须的。但是需要跨语言的RPC框架一定会有IDL部分的存在。这是因为要找到一个各种语言能够理解的消息结构、接口定义的描述形式。如果您的RPC实现没有考虑跨语言性，那么IDL部分就不需要包括，例如JAVA RMI因为就是为了在JAVA语言间进行使用，所以JAVA RMI就没有相应的IDL。</li>
 </ul>
-<h3 id="RPC-框架分层设计"><a href="#RPC-框架分层设计" class="headerlink" title="RPC 框架分层设计"></a>RPC 框架分层设计</h3><p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/6d12fff7fde5429b814f15c64fc4a261tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="RPC 框架分层设计"></p>
+<h3 id="RPC-框架分层设计"><a href="#RPC-框架分层设计" class="headerlink" title="RPC 框架分层设计"></a>RPC 框架分层设计</h3><p><img src="/bytedance-camp-note-15/6d12fff7fde5429b814f15c64fc4a261tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="RPC 框架分层设计"></p>
 <h4 id="编解码层"><a href="#编解码层" class="headerlink" title="编解码层"></a>编解码层</h4><ul>
 <li><p>数据格式</p>
 <ul>
@@ -248,16 +250,16 @@
 <li><p>生成代码和编解码层相互依赖，框架的编解码应当具备扩展任意编解码协议的能力</p>
 </li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/7ffa6428b4214c6590a3b8a6fc106390tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="编解码层"></p>
+<p><img src="/bytedance-camp-note-15/7ffa6428b4214c6590a3b8a6fc106390tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="编解码层"></p>
 <h4 id="协议层"><a href="#协议层" class="headerlink" title="协议层"></a>协议层</h4><ul>
 <li>以 Thrift 的 THeader 协议为例</li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/228aa11d265240c3aad35736194de94ftplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="协议层"></p>
+<p><img src="/bytedance-camp-note-15/228aa11d265240c3aad35736194de94ftplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="协议层"></p>
 <ul>
 <li>协议解析</li>
 </ul>
-<p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/ae3b22f299dc4e4a8df34793263055cbtplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="协议解析"></p>
-<h4 id="网络通信层"><a href="#网络通信层" class="headerlink" title="网络通信层"></a>网络通信层</h4><p><img src="https://www.kkkode.top/wp-content/uploads/2023/02/c4e3c7f3fb234b6f9f1102fca16818ddtplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="网络通信层"></p>
+<p><img src="/bytedance-camp-note-15/ae3b22f299dc4e4a8df34793263055cbtplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="协议解析"></p>
+<h4 id="网络通信层"><a href="#网络通信层" class="headerlink" title="网络通信层"></a>网络通信层</h4><p><img src="/bytedance-camp-note-15/c4e3c7f3fb234b6f9f1102fca16818ddtplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp" alt="网络通信层"></p>
 <ul>
 <li><p>阻塞 IO 下，耗费一个线程去阻塞在 read(fd) 去等待用足够多的数据可读并返回。</p>
 </li>
@@ -279,17 +281,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/文章列表/" class="article-tag-list-link color5">文章列表</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/" class="article-tag-list-link color2">all-article</a>
-
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/all-article/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
+        			<a href="/categories/字节跳动青训营笔记/" class="article-tag-list-link color5">字节跳动青训营笔记</a>
 
         		</li>
       		
@@ -497,7 +489,51 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JWT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Golang</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目实战</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Gorm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">分布式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">前缀和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">深度图像</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">世界坐标</a>
               </li>
             
             <div class="clearfix"></div>
